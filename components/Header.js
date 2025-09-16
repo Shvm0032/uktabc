@@ -1,67 +1,69 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ChevronDown, Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const services = [
-    { name: 'Tunnel Construction', href: '/services#tunnel' },
-    { name: 'Building Construction', href: '/services#building' },
-    { name: 'Infrastructure Development', href: '/services#infrastructure' },
-    { name: 'Project Management', href: '/services#management' },
+    { name: "Tunnel Construction", href: "/services#tunnel" },
+    { name: "Building Construction", href: "/services#building" },
+    { name: "Infrastructure Development", href: "/services#infrastructure" },
+    { name: "Project Management", href: "/services#management" },
   ];
 
   return (
-    <motion.header 
+    <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className="sticky top-0 bg-white shadow-lg z-50"
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">UK</span>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-brand-blue font-bold text-lg leading-tight">
-                UK Tunnel & Building<br />
-                <span className="text-brand-maroon text-sm">Construction India Pvt. Ltd.</span>
-              </h1>
-            </div>
+          {/* Left Logo */}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/Assets/logo/uktabc-logo.png"
+              alt="UK Tunnel & Building Construction India Pvt. Ltd."
+              width={100}
+              height={50}
+              className="rounded-lg"
+            />
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Center Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-brand-blue transition-colors">
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-brand-blue transition-colors"
+            >
               Home
             </Link>
-            <Link href="/about-us" className="text-gray-700 hover:text-brand-blue transition-colors">
+            <Link
+              href="/about-us"
+              className="text-gray-700 hover:text-brand-blue transition-colors"
+            >
               About Us
             </Link>
-            
+
             {/* Services Dropdown */}
             <div className="relative">
               <button
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onMouseLeave={() => setIsServicesOpen(false)}
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
                 className="flex items-center text-gray-700 hover:text-brand-blue transition-colors"
               >
                 Services <ChevronDown className="ml-1 h-4 w-4" />
               </button>
-              
+
               {isServicesOpen && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  onMouseEnter={() => setIsServicesOpen(true)}
-                  onMouseLeave={() => setIsServicesOpen(false)}
                   className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border"
                 >
                   {services.map((service) => (
@@ -77,13 +79,22 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/our-team" className="text-gray-700 hover:text-brand-blue transition-colors">
+            <Link
+              href="/our-team"
+              className="text-gray-700 hover:text-brand-blue transition-colors"
+            >
               Our Team
             </Link>
-            <Link href="/gallery" className="text-gray-700 hover:text-brand-blue transition-colors">
+            <Link
+              href="/gallery"
+              className="text-gray-700 hover:text-brand-blue transition-colors"
+            >
               Gallery
             </Link>
-            <Link href="/contact-us" className="text-gray-700 hover:text-brand-blue transition-colors">
+            <Link
+              href="/contact-us"
+              className="text-gray-700 hover:text-brand-blue transition-colors"
+            >
               Contact Us
             </Link>
             <Link href="/career" className="btn-primary">
@@ -91,12 +102,27 @@ export default function Header() {
             </Link>
           </div>
 
+          {/* Right Logo */}
+          <Link href="/" className="hidden md:flex items-center">
+            <Image
+              src="/Assets/logo/KKTBS-logo.png"
+              alt="Company Logo Right"
+              width={100}
+              height={50}
+              className="rounded-lg"
+            />
+          </Link>
+
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2"
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
 
@@ -104,7 +130,7 @@ export default function Header() {
         {isMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden border-t"
           >

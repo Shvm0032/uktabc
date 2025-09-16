@@ -5,8 +5,18 @@
 :root {
   --brand-blue: #001053;
   --brand-maroon: #761c14;
+ --font-montserrat: 'Montserrat', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+}
+/* Default font for body text */
+body, p, li, span {
+  font-family: var(--font-poppins);
 }
 
+/* Default font for all headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat);
+}
 @layer base {
   * {
     @apply border-gray-200;
