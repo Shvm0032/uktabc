@@ -10,11 +10,17 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
+  // const services = [
+  //   { name: "Tunnel Construction", href: "/services#tunnel" },
+  //   { name: "Building Construction", href: "/services#building" },
+  //   { name: "Infrastructure Development", href: "/services#infrastructure" },
+  //   { name: "Project Management", href: "/services#management" },
+  // ];
   const services = [
-    { name: "Tunnel Construction", href: "/services#tunnel" },
-    { name: "Building Construction", href: "/services#building" },
-    { name: "Infrastructure Development", href: "/services#infrastructure" },
-    { name: "Project Management", href: "/services#management" },
+    { name: "Tunnel Construction", href: "#" },
+    { name: "Building Construction", href: "#" },
+    { name: "Infrastructure Development", href: "#" },
+    { name: "Project Management", href: "#" },
   ];
 
   return (
@@ -44,8 +50,12 @@ export default function Header() {
             >
               Home
             </Link>
-            <Link
+            {/* <Link
               href="/about-us"
+              className="text-gray-700 hover:text-brand-blue transition-colors"
+            > */}
+            <Link
+              href="#"
               className="text-gray-700 hover:text-brand-blue transition-colors"
             >
               About Us
@@ -79,25 +89,40 @@ export default function Header() {
               )}
             </div>
 
-            <Link
+            {/* <Link
               href="/our-team"
+              className="text-gray-700 hover:text-brand-blue transition-colors"
+            > */}
+            <Link
+              href="#"
               className="text-gray-700 hover:text-brand-blue transition-colors"
             >
               Our Team
             </Link>
-            <Link
+            {/* <Link
               href="/gallery"
+              className="text-gray-700 hover:text-brand-blue transition-colors"
+            > */}
+            <Link
+              href="#"
               className="text-gray-700 hover:text-brand-blue transition-colors"
             >
               Gallery
             </Link>
-            <Link
+            {/* <Link
               href="/contact-us"
+              className="text-gray-700 hover:text-brand-blue transition-colors"
+            > */}
+            <Link
+              href="#"
               className="text-gray-700 hover:text-brand-blue transition-colors"
             >
               Contact Us
             </Link>
-            <Link href="/career" className="btn-primary">
+            {/* <Link href="/career" className="btn-primary">
+              Career
+            </Link> */}
+            <Link href="#" className="btn-primary">
               Career
             </Link>
           </div>
@@ -138,22 +163,22 @@ export default function Header() {
               <Link href="/" className="block text-gray-700 hover:text-brand-blue">
                 Home
               </Link>
-              <Link href="/about-us" className="block text-gray-700 hover:text-brand-blue">
+              <Link href="#" className="block text-gray-700 hover:text-brand-blue">
                 About Us
               </Link>
-              <Link href="/services" className="block text-gray-700 hover:text-brand-blue">
+              <Link href="#" className="block text-gray-700 hover:text-brand-blue">
                 Services
               </Link>
-              <Link href="/our-team" className="block text-gray-700 hover:text-brand-blue">
+              <Link href="#" className="block text-gray-700 hover:text-brand-blue">
                 Our Team
               </Link>
-              <Link href="/gallery" className="block text-gray-700 hover:text-brand-blue">
+              <Link href="#" className="block text-gray-700 hover:text-brand-blue">
                 Gallery
               </Link>
-              <Link href="/contact-us" className="block text-gray-700 hover:text-brand-blue">
+              <Link href="#" className="block text-gray-700 hover:text-brand-blue">
                 Contact Us
               </Link>
-              <Link href="/career" className="block text-brand-blue font-semibold">
+              <Link href="#" className="block text-brand-blue font-semibold">
                 Career
               </Link>
             </div>

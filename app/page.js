@@ -68,7 +68,7 @@ export default function Home() {
       <Highlights />
 
       {/* Client Comments Section */}
-      <Comments />
+      {/* <Comments /> */}
 
       {/* Testimonials Section */}
       <Testimonials />
