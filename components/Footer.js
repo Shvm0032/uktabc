@@ -44,15 +44,22 @@ export default function Footer() {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <MapPin className="h-5 w-5 text-brand-maroon" />
-                  <span className="text-gray-800">New Delhi, India</span>
+                  <span className="text-gray-800">
+                    <p>UK Tunnel and Building Construction India Pvt. Ltd.</p>
+                    <p>Khasra No. 1540, Ratanpur Nayagaon,</p>
+                    <p>Dehradun, Uttarakhand, PIN-248007</p>
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 text-brand-maroon" />
-                  <span className="text-gray-800">+91 11 1234 5678</span>
+                  <span className="text-gray-800">
+                    <p>(+91) 0135 2977177</p>
+                    <p>(+91) 99171 77777</p>
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-brand-maroon" />
-                  <span className="text-gray-800">info@uktunnel.in</span>
+                  <span className="text-gray-800">admin@uktabc.co.in</span>
                 </div>
               </div>
             </motion.div>
@@ -71,7 +78,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/"
-                    className="text-gray-800 hover:text-white transition-colors"
+                    className="text-gray-800 hover:text-brand-maroon transition-colors"
                   >
                     Home
                   </Link>
@@ -79,7 +86,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/about-us"
-                    className="text-gray-800 hover:text-white transition-colors"
+                    className="text-gray-800 hover:text-brand-maroon transition-colors"
                   >
                     About Us
                   </Link>
@@ -87,7 +94,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/services"
-                    className="text-gray-800 hover:text-white transition-colors"
+                    className="text-gray-800 hover:text-brand-maroon transition-colors"
                   >
                     Services
                   </Link>
@@ -95,7 +102,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/our-team"
-                    className="text-gray-800 hover:text-white transition-colors"
+                    className="text-gray-800 hover:text-brand-maroon transition-colors"
                   >
                     Our Team
                   </Link>
@@ -103,7 +110,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/gallery"
-                    className="text-gray-800 hover:text-white transition-colors"
+                    className="text-gray-800 hover:text-brand-maroon transition-colors"
                   >
                     Gallery
                   </Link>

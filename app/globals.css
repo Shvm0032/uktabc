@@ -39,3 +39,29 @@ h1, h2, h3, h4, h5, h6 {
     @apply bg-brand-maroon hover:bg-brand-maroon-light text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-300;
   }
 }
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 5px;        /* vertical scrollbar ka width */
+  height: 5px;       /* horizontal scrollbar ka height */
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;  /* Scrollbar background white */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 128, 0.8); /* Navy blue color */
+  border-radius: 10px;
+  backdrop-filter: blur(4px);       /* Blur effect */
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 128, 1); /* Dark navy on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;             /* Thin scrollbar */
+  scrollbar-color: navy white;       /* thumb color / track color */
+}
