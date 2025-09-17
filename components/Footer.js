@@ -16,8 +16,19 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-white text-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Background Overlay Logo */}
+        <div className="absolute bottom-0 right-20 opacity-10 pointer-events-none">
+          <Image
+            src="/Assets/logo/uktabc-logo.png"
+            alt="Background Logo"
+            width={250}
+            height={85}
+            className="object-contain"
+          />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <motion.div
@@ -148,6 +159,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
       <div
         className="bg-gradient-to-r"
         style={{ background: "linear-gradient(to right, #6C1B1A, #0D114C)" }}
