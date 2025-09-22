@@ -58,7 +58,7 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="relative w-full h-[90vh] md:h-[80vh] overflow-hidden">
+    <div className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
       <AnimatePresence>
         <motion.div
           key={slides[current].id}

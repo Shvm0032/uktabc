@@ -42,7 +42,7 @@ export default function Achievements() {
           className="text-center mb-5"
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-2">Our Achievements</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-md md:text-xl text-gray-600 max-w-3xl mx-auto">
             Delivering excellence in construction with a track record of success
           </p>
         </motion.div>

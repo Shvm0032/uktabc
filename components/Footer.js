@@ -198,7 +198,7 @@ export default function Footer() {
               <Instagram className="h-5 w-5" />
             </a>
           </div>
-          <p className="text-white text-center text-lg">
+          <p className="text-white text-center md:text-lg text-sm">
             © {new Date().getFullYear()} UK Tunnel and Building Construction
             India Pvt. Ltd. All rights reserved.
           </p>

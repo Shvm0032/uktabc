@@ -24,14 +24,14 @@ const About = () => {
           <h3 className="text-2xl font-semibold text-brand-blue mb-4">
             Building Tomorrow with Excellence
           </h3>
-          <p className="text-gray-700 mb-4 leading-relaxed">
+          <p className="text-gray-700 mb-4 leading-relaxed text-justify">
             UK Tunnel and Building Construction India Pvt. Ltd. is dedicated to
             delivering world-class infrastructure solutions. With years of
             experience in tunnel construction, building projects, and
             large-scale developments, we ensure quality, safety, and
             sustainability in everything we do.
           </p>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed text-justify">
             Our mission is to shape the future of infrastructure in India
             through innovation, dedication, and precision engineering.
           </p>

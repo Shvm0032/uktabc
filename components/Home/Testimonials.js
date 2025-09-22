@@ -6,7 +6,6 @@ import { Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
 import { FaStar, FaQuoteRight } from "react-icons/fa";
 
-
 const Testimonials = () => {
   const testimonials = [
     {
@@ -47,7 +46,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 relative bg-gradient-to-r from-brand-blue  to-brand-maroon">
+    <section className="py-20 relative bg-gradient-to-r from-brand-blue to-brand-maroon">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         {/* Heading */}
         <motion.h2
@@ -58,7 +57,7 @@ const Testimonials = () => {
         >
           What Our Clients Say
         </motion.h2>
-       
+
         {/* Slider */}
         <Swiper
           modules={[Autoplay]}
@@ -66,15 +65,15 @@ const Testimonials = () => {
           slidesPerView={1}
           loop={true}
           autoplay={{
-            delay: 6000, // 6 seconds per slide, smooth
+            delay: 6000,
             disableOnInteraction: false,
           }}
-          speed={800} // transition duration 0.8s (smooth)
+          speed={800}
         >
           {testimonials.map((item, index) => (
             <SwiperSlide key={index}>
               <motion.div
-                className="bg-white rounded-lg shadow-lg p-8 mx-4 md:mx-0 relative"
+                className="bg-white rounded-lg shadow-lg p-8 md:p-10 mx-4 md:mx-0 relative"
                 style={{
                   borderLeft: "5px solid #6E1B17",
                   borderRight: "5px solid #07114F",
@@ -91,16 +90,21 @@ const Testimonials = () => {
                 </div>
 
                 {/* Comment */}
-                <p className="text-gray-700 mb-6 text-sm md:text-base relative text-left">
-                  "{item.comment}"
-                  <FaQuoteRight className="absolute bottom-0 right-0 text-brand-blue text-4xl" />
-                </p>
+                <div className="relative">
+                  <p className="text-gray-700 mb-6 text-sm md:text-base md:text-left">
+                    "{item.comment}"
+                  </p>
+                 
+                </div>
 
                 {/* Name & Designation */}
                 <h3 className="text-lg font-semibold text-gray-900 text-left">
                   {item.name}
                 </h3>
                 <p className="text-gray-500 text-sm text-left">{item.designation}</p>
+                 {/* Quote icon */}
+                  <FaQuoteRight className="hidden md:block absolute bottom-5 right-4 text-brand-blue text-4xl" />
+                  <FaQuoteRight className="block md:hidden  mt-2 text-brand-blue text-3xl mx-auto" />
               </motion.div>
             </SwiperSlide>
           ))}
