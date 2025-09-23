@@ -124,7 +124,7 @@ export default function Header() {
                 Home
               </Link>
               <Link
-                href="#"
+                href="/about-us"
                 className="text-gray-700 hover:text-brand-blue transition-colors"
               >
                 About Us
@@ -164,7 +164,7 @@ export default function Header() {
               </div>
 
               <Link
-                href="#"
+                href="/our-team"
                 className="text-gray-700 hover:text-brand-blue transition-colors"
               >
                 Our Team

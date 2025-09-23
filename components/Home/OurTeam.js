@@ -14,7 +14,7 @@ const OurTeam = () => {
     {
       img: "/Assets/team/kunwar.jpg",
       name: "Kunwar Singh Negi",
-      designation: "Managing Director",
+      designation: "(Chairman & MD)",
     },
     {
       img: "/Assets/team/rekha.jpg",
@@ -28,13 +28,13 @@ const OurTeam = () => {
     },
     {
       img: "/Assets/team/Yogita.jpg",
-      name: "Yogita Kathait",
-      designation: "Manager",
+      name: "Shivi Kathait",
+      designation: "General Manager (Civil)",
     },
     {
       img: "/Assets/team/aradhna.jpg",
-      name: "Aradhna Sariyal",
-      designation: "Account Manager",
+      name: "Amisha Bhandari",
+      designation: "Company Secretary & Finance",
     },
   ];
 

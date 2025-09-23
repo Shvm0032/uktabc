@@ -15,8 +15,8 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-black">
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-white text-black border-t-2">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
         {/* Background Overlay Logo */}
         <div className="absolute bottom-0 right-20 opacity-10 pointer-events-none">
           <Image
@@ -84,7 +84,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+              <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 <li>
                   <Link
@@ -138,7 +138,7 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
-              <h4 className="text-lg font-semibold mb-4">Services</h4>
+              <h4 className="text-xl font-semibold mb-4">Services</h4>
               <ul className="space-y-2">
                 <li>
                   <span className="text-gray-800">Tunnel Construction</span>
