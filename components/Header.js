@@ -171,14 +171,14 @@ export default function Header() {
               </Link>
 
               <Link
-                href="#"
+                href="/gallery"
                 className="text-gray-700 hover:text-brand-blue transition-colors"
               >
                 Gallery
               </Link>
 
               <Link
-                href="#"
+                href="/contact-us"
                 className="text-gray-700 hover:text-brand-blue transition-colors"
               >
                 Contact Us

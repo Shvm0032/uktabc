@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { Linkedin, Mail, Phone } from 'lucide-react';
+import Divider from "../Divider";
+
 
 const teamMembers = [
   {
@@ -76,6 +78,7 @@ export default function OurTeam() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Leadership Team</h2>
+            <Divider/>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our experienced leadership team brings together decades of expertise in 
               construction, engineering, and project management.
