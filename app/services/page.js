@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import ServiceCard from '@/components/ServiceCard';
 import { Drill, Building2, Loader as Road, Settings } from 'lucide-react';
+import Divider from '@/components/Divider';
 
 const services = [
   {
@@ -96,6 +97,7 @@ export default function Services() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">What We Do</h2>
+            <Divider/>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               We provide comprehensive construction services across multiple sectors, 
               delivering excellence in every project we undertake.

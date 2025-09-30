@@ -137,11 +137,12 @@ export default function Header() {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <button
+                <Link
+                  href={"/services"}
                   className="flex items-center text-gray-700 hover:text-brand-blue transition-colors"
                 >
                   Services <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
+                </Link>
 
                 {isServicesOpen && (
                   <motion.div
@@ -184,7 +185,7 @@ export default function Header() {
                 Contact Us
               </Link>
 
-              <Link href="#" className="btn-primary">
+              <Link href="/career" className="btn-primary">
                 Career
               </Link>
             </div>
@@ -229,7 +230,7 @@ export default function Header() {
                   Home
                 </Link>
                 <Link
-                  href="#"
+                  href="/about-us"
                   className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
                   onClick={closeMobileMenu}
                 >
@@ -271,28 +272,28 @@ export default function Header() {
                 </div>
 
                 <Link
-                  href="#"
+                  href="/our-team"
                   className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
                   onClick={closeMobileMenu}
                 >
                   Our Team
                 </Link>
                 <Link
-                  href="#"
+                  href="/gallery"
                   className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
                   onClick={closeMobileMenu}
                 >
                   Gallery
                 </Link>
                 <Link
-                  href="#"
+                  href="/contact-us"
                   className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
                   onClick={closeMobileMenu}
                 >
                   Contact Us
                 </Link>
                 <Link 
-                  href="#" 
+                  href="/career"
                   className="block px-4 py-2 text-brand-blue font-semibold hover:bg-gray-50"
                   onClick={closeMobileMenu}
                 >
