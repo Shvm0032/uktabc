@@ -239,7 +239,7 @@ export default function ContactUs() {
               {/* Map placeholder */}
               <div className="mt-8">
                 <div className="bg-gray-300 h-64 rounded-lg flex items-center justify-center">
-                  <p className="text-gray-600">Interactive Map Coming Soon</p>
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.5395048970727!2d77.90386357535554!3d30.307168574792332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ed53e40000001%3A0x9ae13ba42c9cb792!2sUK%20Tunnel%20and%20Building%20Construction%20India%20Pvt.%20Ltd!5e0!3m2!1sen!2sin!4v1759139699055!5m2!1sen!2sin" width="600" height="255"  loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
               </div>
             </motion.div>
