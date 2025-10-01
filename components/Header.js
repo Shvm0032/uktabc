@@ -14,10 +14,10 @@ export default function Header() {
   const mobileServicesRef = useRef(null);
 
   const services = [
-    { name: "Tunnel Construction", href: "#" },
-    { name: "Building Construction", href: "#" },
-    { name: "Infrastructure Development", href: "#" },
-    { name: "Project Management", href: "#" },
+    { name: "Tunnel Construction", href: "/services/tunnel-construction" },
+    { name: "Building Construction", href: "/services/building-construction" },
+    { name: "Infrastructure Development", href: "/services/infrastructure-development" },
+    { name: "Project Management", href: "/services/project-management" },
   ];
 
   // Close dropdown when clicking outside - IMPROVED

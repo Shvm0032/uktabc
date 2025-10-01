@@ -1,12 +1,17 @@
+"use client";
+
 import ServiceHero from '@/components/Services/ServiceHero';
 import ServiceChooseUs from '@/components/Services/ServiceChooseUs';
 import FeatureService from '@/components/Services/FeatureService';
-import { FaWater, FaMountain, FaIndustry, FaTools, FaShieldAlt, FaProjectDiagram, FaFaucet } from 'react-icons/fa';
 import HowWeWorkTimeline from '@/components/Services/HowWeWorkTimeline';
+import ServiceCTA from '@/components/Services/ServiceCTA';
 
+// Icons
+import { FaWater, FaMountain, FaIndustry, FaTools, FaShieldAlt, FaProjectDiagram } from 'react-icons/fa';
+import { Lightbulb, ClipboardCheck, Hammer, Building } from 'lucide-react';
 
 export default function TunnelConstruction() {
-  const features = [
+ const features = [
     { 
       icon: <FaTools />, 
       title: "Grouting", 
@@ -37,17 +42,30 @@ export default function TunnelConstruction() {
       title: "Chemical Grouting", 
       description: "Uses acrylic, polyurethane, epoxy, and silicate resins to waterproof and strengthen underground structures. Applied for tunnels, shafts, dams, and foundations where rapid reaction and high durability are required. Offers customizable solutions for complex water ingress or structural issues." 
     },
-   
   ];
 
   const steps = [
-  { title: 'Survey & Planning', description: 'Detailed site survey and geological study to ensure precise tunneling.' },
-  { title: 'Design & Engineering', description: 'Structural and geotechnical design tailored to project requirements.' },
-  { title: 'Excavation', description: 'Mechanized or conventional tunneling with safety and efficiency.' },
-  { title: 'Grouting & Reinforcement', description: 'Soil stabilization and foundation strengthening using advanced methods.' },
-  { title: 'Waterproofing', description: 'Protects tunnels and underground structures from moisture and water ingress.' },
-  { title: 'Inspection & Handover', description: 'Safety checks, quality assurance, and project handover.' }
-];
+    {
+      icon: <Lightbulb className="h-8 w-8 text-white" />,
+      title: 'Idea & Consultation',
+      description: 'We start by understanding your needs, vision, and goals.'
+    },
+    {
+      icon: <ClipboardCheck className="h-8 w-8 text-white" />,
+      title: 'Planning & Design',
+      description: 'Detailed project planning and finalizing design layouts.'
+    },
+    {
+      icon: <Hammer className="h-8 w-8 text-white" />,
+      title: 'Execution',
+      description: 'Skilled professionals bring the plan to life with quality.'
+    },
+    {
+      icon: <Building className="h-8 w-8 text-white" />,
+      title: 'Handover',
+      description: 'Final inspection and successful delivery of the project.'
+    }
+  ];
 
   return (
     <>
@@ -73,12 +91,19 @@ export default function TunnelConstruction() {
         subtitle="UKTABC specializes in various tunneling techniques, ensuring safety, efficiency, and structural integrity for underground and building works across India."
         features={features}
       />
-       <HowWeWorkTimeline
+
+      <HowWeWorkTimeline
         title="How We Work"
-        subtitle="Our structured approach ensures efficiency, safety, and quality in every tunneling project we undertake."
+        subtitle="Our structured approach ensures efficiency, safety, and quality."
         steps={steps}
       />
-      
+      <ServiceCTA
+        title="Expert Tunnel Construction & Grouting"
+        subtitle="Delivering safe, efficient, and high-quality underground infrastructure solutions across India."
+        buttonText="Get a Free Consultation"
+        buttonLink="/contact-us"
+        bgImage="/Assets/services/tunnel-cta.jpg"
+      />
     </>
   );
 }

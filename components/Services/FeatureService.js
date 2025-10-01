@@ -40,7 +40,7 @@ export default function FeatureService({ title, subtitle, features }) {
                   <div className="text-white text-2xl">{feature.icon}</div>
                 </div>
                 <h3 className="text-2xl font-bold mb-2">{feature.title}</h3>
-                <p className="text-gray-600 hover:text-white transition-colors duration-500">{feature.description}</p>
+                <p className=" hover:text-white transition-colors duration-500">{feature.description}</p>
               </div>
             </motion.div>
           ))}
