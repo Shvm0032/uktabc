@@ -34,7 +34,7 @@ const About = () => {
               Our mission is to shape the future of infrastructure in India
               through innovation, dedication, and precision engineering.
             </p>
-            <button class="bg-gradient-to-r mt-4 from-[#6B1B1B] to-[#141249] text-white px-3 py-1 rounded-md transform transition-all duration-200 hover:scale-95">
+            <button className="bg-gradient-to-r mt-4 from-[#6B1B1B] to-[#141249] text-white px-3 py-1 rounded-md transform transition-all duration-200 hover:scale-95">
               Read More
             </button>
           </div>

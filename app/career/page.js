@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Clock, Users, Briefcase, CheckCircle } from 'lucide-react';
+import Divider from '@/components/Divider';
 
 const jobOpenings = [
   {
@@ -151,6 +152,7 @@ export default function Career() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Work With Us?</h2>
+            <Divider />
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Join a dynamic team that's shaping India's infrastructure future
             </p>
@@ -184,6 +186,7 @@ export default function Career() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Current Openings</h2>
+            <Divider/>
             <p className="text-xl text-gray-600">
               Explore exciting career opportunities across various departments
             </p>
@@ -243,6 +246,7 @@ export default function Career() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Application Process</h2>
+            <Divider/>
             <p className="text-xl text-gray-600 mb-12">
               Simple steps to join our team
             </p>
