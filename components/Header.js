@@ -147,7 +147,7 @@ export default function Header() {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl border z-50"
+                    className="absolute top-full left-0 p-5 mt-0 w-64 bg-white rounded-lg shadow-xl border z-50"
                   >
                     {services.map((service) => (
                       <Link
@@ -184,7 +184,7 @@ export default function Header() {
                 Contact Us
               </Link>
 
-              <Link href="#" className="btn-primary">
+              <Link href="#" className="text-gray-700 hover:text-brand-blue transition-colors">
                 Career
               </Link>
             </div>
