@@ -14,10 +14,10 @@ export default function Header() {
   const mobileServicesRef = useRef(null);
 
   const services = [
-    { name: "Tunnel Construction", href: "#" },
-    { name: "Building Construction", href: "#" },
-    { name: "Infrastructure Development", href: "#" },
-    { name: "Project Management", href: "#" },
+    { name: "Tunnel Construction", href: "/services/tunnel-construction" },
+    { name: "Building Construction", href: "/services/building-construction" },
+    { name: "Infrastructure Development", href: "/services/infrastructure-development" },
+    { name: "Project Management", href: "/services/project-management" },
   ];
 
   // Close dropdown when clicking outside - IMPROVED
@@ -137,11 +137,12 @@ export default function Header() {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <button
+                <Link
+                  href={"/services"}
                   className="flex items-center text-gray-700 hover:text-brand-blue transition-colors"
                 >
                   Services <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
+                </Link>
 
                 {isServicesOpen && (
                   <motion.div
@@ -171,14 +172,14 @@ export default function Header() {
               </Link>
 
               <Link
-                href="#"
+                href="/gallery"
                 className="text-gray-700 hover:text-brand-blue transition-colors"
               >
                 Gallery
               </Link>
 
               <Link
-                href="#"
+                href="/contact-us"
                 className="text-gray-700 hover:text-brand-blue transition-colors"
               >
                 Contact Us
@@ -229,7 +230,7 @@ export default function Header() {
                   Home
                 </Link>
                 <Link
-                  href="#"
+                  href="/about-us"
                   className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
                   onClick={closeMobileMenu}
                 >
@@ -271,28 +272,28 @@ export default function Header() {
                 </div>
 
                 <Link
-                  href="#"
+                  href="/our-team"
                   className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
                   onClick={closeMobileMenu}
                 >
                   Our Team
                 </Link>
                 <Link
-                  href="#"
+                  href="/gallery"
                   className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
                   onClick={closeMobileMenu}
                 >
                   Gallery
                 </Link>
                 <Link
-                  href="#"
+                  href="/contact-us"
                   className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
                   onClick={closeMobileMenu}
                 >
                   Contact Us
                 </Link>
                 <Link 
-                  href="#" 
+                  href="/career"
                   className="block px-4 py-2 text-brand-blue font-semibold hover:bg-gray-50"
                   onClick={closeMobileMenu}
                 >
