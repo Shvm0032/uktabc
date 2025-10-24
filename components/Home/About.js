@@ -9,7 +9,7 @@ import Divider from "../Divider";
 const About = () => {
   return (
     <>
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#F1F5F9]">
         {/* Heading + Divider */}
         <div className="text-center mb-5">
           <h2 className="text-4xl font-bold text-gray-800">About Us</h2>
@@ -34,7 +34,7 @@ const About = () => {
               Our mission is to shape the future of infrastructure in India
               through innovation, dedication, and precision engineering.
             </p>
-            <button className="bg-gradient-to-r mt-4 from-[#6B1B1B] to-[#141249] text-white px-3 py-1 rounded-md transform transition-all duration-200 hover:scale-95">
+            <button className="bg-gradient-to-r mt-4 from-[#6B1B1B] to-[#141249] text-white px-5 py-2  rounded-full transform transition-all duration-200 hover:scale-95">
               Read More
             </button>
           </div>

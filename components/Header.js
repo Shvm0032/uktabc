@@ -3,65 +3,47 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, Phone, Mail, Instagram, Facebook, Youtube } from "lucide-react";
 import Image from "next/image";
-import { Phone, Mail, Instagram, Facebook, Youtube } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isDesktopServicesOpen, setIsDesktopServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+
   const servicesRef = useRef(null);
   const mobileServicesRef = useRef(null);
 
   const services = [
-    { name: "Tunnel Construction", href: "/services/tunnel-construction" },
-    { name: "Building Construction", href: "/services/building-construction" },
-    { name: "Infrastructure Development", href: "/services/infrastructure-development" },
-    { name: "Project Management", href: "/services/project-management" },
+    { name: "Tunnel Construction", href: "#" },
+    { name: "Building Construction", href: "#" },
+    { name: "Infrastructure Development", href: "#" },
+    { name: "Project Management", href: "#" },
   ];
 
-  // Close dropdown when clicking outside - IMPROVED
   useEffect(() => {
     function handleClickOutside(event) {
-      // Desktop dropdown
       if (servicesRef.current && !servicesRef.current.contains(event.target)) {
-        setIsServicesOpen(false);
-      }
-      
-      // Mobile dropdown - only if menu is open
-      if (isMenuOpen && mobileServicesRef.current && !mobileServicesRef.current.contains(event.target)) {
-        setIsServicesOpen(false);
+        setIsDesktopServicesOpen(false);
       }
     }
-
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isMenuOpen]);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
-  // Handle hover for desktop
   const handleMouseEnter = () => {
-    if (window.innerWidth >= 768) {
-      setIsServicesOpen(true);
-    }
+    if (window.innerWidth >= 768) setIsDesktopServicesOpen(true);
   };
 
   const handleMouseLeave = () => {
-    if (window.innerWidth >= 768) {
-      setIsServicesOpen(false);
-    }
+    if (window.innerWidth >= 768) setIsDesktopServicesOpen(false);
   };
 
-  // Handle click for mobile - SIMPLIFIED
-  const toggleMobileServices = () => {
-    setIsServicesOpen(prev => !prev);
-  };
+  const toggleMobileServices = () => setIsMobileServicesOpen((prev) => !prev);
 
-  // Close mobile menu when link is clicked
   const closeMobileMenu = () => {
     setIsMenuOpen(false);
-    setIsServicesOpen(false);
+    setIsMobileServicesOpen(false);
   };
 
   return (
@@ -82,7 +64,6 @@ export default function Header() {
               <span>admin@uktabc.co.in</span>
             </div>
           </div>
-
           <div className="flex items-center space-x-4">
             <Link href="https://instagram.com" target="_blank">
               <Instagram className="h-5 w-5 hover:text-gray-200 transition" />
@@ -97,11 +78,8 @@ export default function Header() {
         </div>
       </div>
 
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className="sticky top-0 bg-white shadow-lg z-50"
-      >
+      {/* Main Header */}
+      <motion.header initial={{ y: -100 }} animate={{ y: 0 }} className="sticky top-0 bg-white shadow-lg z-50">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Left Logo */}
@@ -117,34 +95,36 @@ export default function Header() {
 
             {/* Center Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link
-                href="/"
-                className="text-gray-700 hover:text-brand-blue transition-colors"
-              >
-                Home
-              </Link>
-              <Link
-                href="/about-us"
-                className="text-gray-700 hover:text-brand-blue transition-colors"
-              >
-                About Us
-              </Link>
+              {[
+                { name: "Home", href: "/" },
+                { name: "About Us", href: "/about-us" },
+              ].map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="relative text-gray-700 hover:text-brand-blue transition-colors group"
+                >
+                  {link.name}
+                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-[#6C1B1A] to-[#0D114C] transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              ))}
 
-              {/* Services Dropdown - Desktop */}
-              <div 
+              {/* Services Dropdown */}
+              <div
                 ref={servicesRef}
                 className="relative"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
                 <Link
-                  href={"/services"}
-                  className="flex items-center text-gray-700 hover:text-brand-blue transition-colors"
+                  href="/services"
+                  className="relative flex items-center text-gray-700 hover:text-brand-blue transition-colors group"
                 >
                   Services <ChevronDown className="ml-1 h-4 w-4" />
+                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-[#6C1B1A] to-[#0D114C] transition-all duration-300 group-hover:w-full"></span>
                 </Link>
 
-                {isServicesOpen && (
+                {isDesktopServicesOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -154,8 +134,8 @@ export default function Header() {
                       <Link
                         key={service.name}
                         href={service.href}
-                        className="block px-4 py-3 text-gray-700 hover:bg-brand-blue hover:text-white transition-colors first:rounded-t-lg last:rounded-b-lg"
-                        onClick={() => setIsServicesOpen(false)}
+                        className="block px-4 py-3 text-gray-700 hover:bg-[#0D114C] hover:text-white transition-colors first:rounded-t-lg last:rounded-b-lg"
+                        onClick={() => setIsDesktopServicesOpen(false)}
                       >
                         {service.name}
                       </Link>
@@ -164,94 +144,58 @@ export default function Header() {
                 )}
               </div>
 
-              <Link
-                href="/our-team"
-                className="text-gray-700 hover:text-brand-blue transition-colors"
-              >
-                Our Team
-              </Link>
-
-              <Link
-                href="/gallery"
-                className="text-gray-700 hover:text-brand-blue transition-colors"
-              >
-                Gallery
-              </Link>
-
-              <Link
-                href="/contact-us"
-                className="text-gray-700 hover:text-brand-blue transition-colors"
-              >
-                Contact Us
-              </Link>
-
-              <Link href="#" className="text-gray-700 hover:text-brand-blue transition-colors">
-                Career
-              </Link>
+              {[
+                { name: "Our Team", href: "/our-team" },
+                { name: "Gallery", href: "/gallery" },
+                { name: "Contact Us", href: "/contact-us" },
+                { name: "Career", href: "/career" },
+              ].map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="relative text-gray-700 hover:text-brand-blue transition-colors group"
+                >
+                  {link.name}
+                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-[#6C1B1A] to-[#0D114C] transition-all duration-300 group-hover:w-full"></span>
+                </Link>
+              ))}
             </div>
 
             {/* Right Logo */}
             <Link href="/" className="hidden md:flex items-center">
-              <Image
-                src="/Assets/logo/KKTBS-logo.png"
-                alt="Company Logo Right"
-                width={100}
-                height={50}
-                className="rounded-lg"
-              />
+              <Image src="/Assets/logo/KKTBS-logo.png" alt="Company Logo Right" width={100} height={50} className="rounded-lg" />
             </Link>
 
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2"
-            >
-              {isMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+            {/* Mobile Menu Toggle */}
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2">
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              className="md:hidden border-t bg-white"
-            >
+            <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="md:hidden border-t bg-white">
               <div className="py-4 space-y-4">
-                <Link
-                  href="/"
-                  className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
-                  onClick={closeMobileMenu}
-                >
+                <Link href="/" className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50" onClick={closeMobileMenu}>
                   Home
                 </Link>
-                <Link
-                  href="/about-us"
-                  className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
-                  onClick={closeMobileMenu}
-                >
+                <Link href="/about-us" className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50" onClick={closeMobileMenu}>
                   About Us
                 </Link>
 
-                {/* Services with Dropdown - Mobile - FIXED */}
+                {/* Mobile Services */}
                 <div ref={mobileServicesRef} className="px-4">
-                  <div 
+                  <div
                     className="flex items-center justify-between py-2 text-gray-700 hover:text-brand-blue cursor-pointer"
                     onClick={toggleMobileServices}
                   >
                     <span>Services</span>
-                    <ChevronDown 
-                      className={`h-4 w-4 transition-transform duration-300 ${
-                        isServicesOpen ? 'rotate-180' : ''
-                      }`} 
+                    <ChevronDown
+                      className={`h-4 w-4 transition-transform duration-300 ${isMobileServicesOpen ? "rotate-180" : ""}`}
                     />
                   </div>
-                  
-                  {isServicesOpen && (
+
+                  {isMobileServicesOpen && (
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
@@ -271,32 +215,16 @@ export default function Header() {
                   )}
                 </div>
 
-                <Link
-                  href="/our-team"
-                  className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
-                  onClick={closeMobileMenu}
-                >
+                <Link href="/our-team" className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50" onClick={closeMobileMenu}>
                   Our Team
                 </Link>
-                <Link
-                  href="/gallery"
-                  className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
-                  onClick={closeMobileMenu}
-                >
+                <Link href="/gallery" className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50" onClick={closeMobileMenu}>
                   Gallery
                 </Link>
-                <Link
-                  href="/contact-us"
-                  className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
-                  onClick={closeMobileMenu}
-                >
+                <Link href="/contact-us" className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50" onClick={closeMobileMenu}>
                   Contact Us
                 </Link>
-                <Link 
-                  href="/career"
-                  className="block px-4 py-2 text-brand-blue font-semibold hover:bg-gray-50"
-                  onClick={closeMobileMenu}
-                >
+                <Link href="/career" className="block px-4 py-2 text-brand-blue font-semibold hover:bg-gray-50" onClick={closeMobileMenu}>
                   Career
                 </Link>
               </div>

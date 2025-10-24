@@ -1,47 +1,48 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+"use client";
+
+import { motion } from "framer-motion";
 
 const CTA = () => {
   return (
-    <>
-      {/* CTA Section */}
-      <section 
-        className="relative py-28 text-white overflow-hidden"
-        style={{
-          backgroundImage: "url('/Assets/home-slider/home-slider-2.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat"
-        }}
-      >
-        {/* Dark overlay for better text contrast */}
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
-        
-        <div className="max-w-5xl mx-auto px-4 relative z-10">
-          <motion.div
-            className="backdrop-blur-sm bg-brand-blue/30 p-10 rounded-2xl border border-white/20 shadow-2xl"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
+    <section
+      className="relative bg-cover bg-center py-14"
+      style={{
+        backgroundImage: "url('/Assets/cta-banner.png')",
+      }}
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+        {/* Left Side: Heading & Description */}
+        <motion.div
+          className="text-white md:w-1/2 mb-8 md:mb-0"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl font-bold mb-4">
+            Building Strong Foundations for a Better Tomorrow
+          </h2>
+          <p className="text-lg">
+            From tunnels to towering structures, we deliver quality construction
+            with trust, innovation, and excellence. Let’s bring your vision to
+            life.
+          </p>
+        </motion.div>
+
+        {/* Right Side: Button */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+        >
+          <a
+            href="/contact-us"
+            className="bg-white text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:scale-90 hover:shadow-md transition-transform duration-300"
           >
-            <h2 className="text-4xl md:text-4xl font-bold mb-6 text-center">Building Strong Foundations for a Better Tomorrow</h2>
-            <p className="text-lg text-gray-200 mb-10 max-w-2xl mx-auto text-center leading-relaxed">
-              From tunnels to towering structures, we deliver quality construction with trust, innovation, and excellence. Let’s bring your vision to life.
-            </p>
-            <div className="text-center">
-              <Link 
-                href="/contact-us" 
-                className="inline-block bg-gradient-to-r from-brand-blue to-brand-maroon text-white font-semibold text-lg px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                Get a Free Consultation
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </>
+            Get a Free Consultation
+          </a>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 

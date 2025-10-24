@@ -1,4 +1,5 @@
 "use client";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
@@ -11,36 +12,31 @@ const Testimonials = () => {
     {
       name: "Rahul Sharma",
       designation: "Client",
-      comment:
-        "Amazing work! The team delivered our project on time and exceeded expectations.",
+      comment: "Amazing work! The team delivered our project on time and exceeded expectations.",
       rating: 5,
     },
     {
       name: "Priya Singh",
       designation: "Client",
-      comment:
-        "Professional and reliable. Highly recommended for large-scale construction projects.",
+      comment: "Professional and reliable. Highly recommended for large-scale construction projects.",
       rating: 5,
     },
     {
       name: "Amit Kumar",
       designation: "Client",
-      comment:
-        "Excellent communication and quality work. Truly experts in their field.",
+      comment: "Excellent communication and quality work. Truly experts in their field.",
       rating: 4,
     },
     {
       name: "Sanya Verma",
       designation: "Client",
-      comment:
-        "The project management was flawless. We are extremely satisfied with the results.",
+      comment: "The project management was flawless. We are extremely satisfied with the results.",
       rating: 5,
     },
     {
       name: "Vikram Patel",
       designation: "Client",
-      comment:
-        "High-quality infrastructure development and very responsive team. Loved working with them.",
+      comment: "High-quality infrastructure development and very responsive team. Loved working with them.",
       rating: 5,
     },
   ];
@@ -91,20 +87,17 @@ const Testimonials = () => {
 
                 {/* Comment */}
                 <div className="relative">
-                  <p className="text-gray-700 mb-6 text-sm md:text-base md:text-left">
+                  <p className="text-gray-700 mb-6 text-sm md:text-base text-left">
                     "{item.comment}"
                   </p>
-                 
                 </div>
 
                 {/* Name & Designation */}
-                <h3 className="text-lg font-semibold text-gray-900 text-left">
-                  {item.name}
-                </h3>
+                <h3 className="text-lg font-semibold text-gray-900 text-left">{item.name}</h3>
                 <p className="text-gray-500 text-sm text-left">{item.designation}</p>
-                 {/* Quote icon */}
-                  <FaQuoteRight className="hidden md:block absolute bottom-5 right-4 text-brand-blue text-4xl" />
-                  <FaQuoteRight className="block md:hidden  mt-2 text-brand-blue text-3xl mx-auto" />
+
+                {/* Quote icon - bottom right */}
+                <FaQuoteRight className="absolute bottom-4 right-4 text-brand-blue text-4xl" />
               </motion.div>
             </SwiperSlide>
           ))}

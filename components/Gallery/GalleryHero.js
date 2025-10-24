@@ -1,10 +1,15 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Divider from '@/components/Divider';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-export default function Services() {
+
+
+export default function GalleryHero() {
+  
   return (
+ 
       <section 
         className="relative h-96 flex items-center justify-center text-white"
         style={{
@@ -19,7 +24,7 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-6xl font-bold mb-4"
           >
-            Our Services
+            Project Gallery
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -27,9 +32,10 @@ export default function Services() {
             transition={{ delay: 0.2 }}
             className="text-xl"
           >
-            Comprehensive Construction Solutions
+            Showcasing Our Construction Excellence
           </motion.p>
         </div>
       </section>
+
   );
 }

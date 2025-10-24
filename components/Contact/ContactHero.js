@@ -1,14 +1,17 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Divider from '@/components/Divider';
 
-export default function Services() {
+
+export default function ContactHero() {
+ 
   return (
+  
       <section 
         className="relative h-96 flex items-center justify-center text-white"
         style={{
-          backgroundImage: 'linear-gradient(rgba(0, 16, 83, 0.8), rgba(118, 28, 20, 0.8)), url(https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop)',
+          backgroundImage: 'linear-gradient(rgba(0, 16, 83, 0.8), rgba(118, 28, 20, 0.8)), url(https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -19,7 +22,7 @@ export default function Services() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-6xl font-bold mb-4"
           >
-            Our Services
+            Contact Us
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -27,7 +30,7 @@ export default function Services() {
             transition={{ delay: 0.2 }}
             className="text-xl"
           >
-            Comprehensive Construction Solutions
+            Get in Touch with Our Expert Team
           </motion.p>
         </div>
       </section>
