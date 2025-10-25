@@ -9,7 +9,7 @@ export default function Service() {
     <div className="min-h-screen">
       <ServiceHero/>
       <ServiceSection/>
-      <CTA/>
+     
       
     </div>
   );

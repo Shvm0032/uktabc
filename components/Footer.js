@@ -15,26 +15,28 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       {/* CTA Section */}
       <section
-        className="relative bg-cover bg-center py-14 z-20"
+        className="relative bg-cover bg-center py-8 z-30 rounded-2xl shadow-2xl max-w-4xl mx-auto sm:max-w-3xl md:max-w-6xl"
         style={{
           backgroundImage: "url('/Assets/cta-banner.png')",
+          marginBottom: "-100px",
+          transform: "translateY(40px)",
         }}
       >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+        <div className="mx-auto px-6 sm:px-10 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-6">
           {/* Left Side */}
           <motion.div
-            className="text-white md:w-1/2 mb-8 md:mb-0"
+            className="text-white md:w-2/3"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold mb-4 leading-snug">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 leading-snug drop-shadow-lg">
               Building Strong Foundations for a Better Tomorrow
             </h2>
-            <p className="text-lg text-gray-200">
+            <p className="text-sm sm:text-base text-gray-200 drop-shadow">
               From tunnels to towering structures, we deliver quality
               construction with trust, innovation, and excellence. Let’s bring
               your vision to life.
@@ -49,7 +51,7 @@ export default function Footer() {
           >
             <Link
               href="/contact-us"
-              className="bg-white text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:scale-90 hover:shadow-md transition-transform duration-300"
+              className="bg-white text-black font-semibold py-3 px-6 rounded-full shadow-lg hover:scale-90 hover:shadow-md transition-transform duration-300 inline-block"
             >
               Get a Free Consultation
             </Link>
@@ -58,10 +60,10 @@ export default function Footer() {
       </section>
 
       {/* Footer */}
-      <footer className="relative bg-white text-black border-t-2 pt-5 -mt-16 z-10">
+      <footer className="relative bg-white text-black border-t-2 pt-40 sm:pt-48 -mt-24 z-10">
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           {/* Background Overlay Logo */}
-          <div className="absolute bottom-0 right-20 opacity-10 pointer-events-none">
+          <div className="absolute bottom-0 right-10 sm:right-20 opacity-10 pointer-events-none hidden sm:block">
             <Image
               src="/Assets/logo/uktabc-logo.png"
               alt="Background Logo"
@@ -71,7 +73,7 @@ export default function Footer() {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 relative z-10">
             {/* Company Info */}
             <div className="col-span-1 md:col-span-2">
               <motion.div
@@ -79,7 +81,7 @@ export default function Footer() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                <Link href="/" className="flex items-center">
+                <Link href="/" className="flex items-center mb-3">
                   <Image
                     src="/Assets/logo/uktabc-logo.png"
                     alt="UK Tunnel & Building Construction India Pvt. Ltd."
@@ -89,31 +91,33 @@ export default function Footer() {
                   />
                 </Link>
 
-                <p className="text-gray-800 mb-6 leading-relaxed">
-                  Leading construction company specializing in tunnel
-                  construction, building projects, and infrastructure development
-                  across India. Committed to quality, safety, and timely delivery.
+                <p className="text-gray-800 mb-4 leading-relaxed text-sm sm:text-base">
+                  Leading construction company specializing in tunnel and
+                  building projects across India. Committed to quality, safety,
+                  and timely delivery.
                 </p>
 
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="h-5 w-5 text-brand-maroon" />
-                    <span className="text-gray-800">
+                <div className="space-y-3 text-sm sm:text-base">
+                  <div className="flex items-start space-x-3">
+                    <MapPin className="h-5 w-5 text-brand-maroon shrink-0 mt-1" />
+                    <span className="text-gray-800 leading-tight">
                       <p>UK Tunnel and Building Construction India Pvt. Ltd.</p>
                       <p>Khasra No. 1540, Ratanpur Nayagaon,</p>
                       <p>Dehradun, Uttarakhand, PIN-248007</p>
                     </span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="h-5 w-5 text-brand-maroon" />
-                    <span className="text-gray-800">
+                  <div className="flex items-start space-x-3">
+                    <Phone className="h-5 w-5 text-brand-maroon shrink-0 mt-1" />
+                    <span className="text-gray-800 leading-tight">
                       <p>(+91) 0135 2977177</p>
                       <p>(+91) 99171 77777</p>
                     </span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Mail className="h-5 w-5 text-brand-maroon" />
-                    <span className="text-gray-800">admin@uktabc.co.in</span>
+                    <Mail className="h-5 w-5 text-brand-maroon shrink-0" />
+                    <span className="text-gray-800 break-all">
+                      admin@uktabc.co.in
+                    </span>
                   </div>
                 </div>
               </motion.div>
@@ -127,13 +131,35 @@ export default function Footer() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
-                <ul className="space-y-2">
-                  <li><Link href="/" className="hover:text-brand-maroon">Home</Link></li>
-                  <li><Link href="/about-us" className="hover:text-brand-maroon">About Us</Link></li>
-                  <li><Link href="/services" className="hover:text-brand-maroon">Services</Link></li>
-                  <li><Link href="/our-team" className="hover:text-brand-maroon">Our Team</Link></li>
-                  <li><Link href="/gallery" className="hover:text-brand-maroon">Gallery</Link></li>
+                <h4 className="text-lg font-semibold mb-3 sm:mb-4">
+                  Quick Links
+                </h4>
+                <ul className="space-y-2 text-sm sm:text-base">
+                  <li>
+                    <Link href="/" className="hover:text-brand-maroon">
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about-us" className="hover:text-brand-maroon">
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/services" className="hover:text-brand-maroon">
+                      Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/our-team" className="hover:text-brand-maroon">
+                      Our Team
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/gallery" className="hover:text-brand-maroon">
+                      Gallery
+                    </Link>
+                  </li>
                 </ul>
               </motion.div>
             </div>
@@ -146,8 +172,8 @@ export default function Footer() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
               >
-                <h4 className="text-xl font-semibold mb-4">Services</h4>
-                <ul className="space-y-2 text-gray-800">
+                <h4 className="text-lg font-semibold mb-3 sm:mb-4">Services</h4>
+                <ul className="space-y-2 text-gray-800 text-sm sm:text-base">
                   <li>Tunnel Construction</li>
                   <li>Building Construction</li>
                   <li>Infrastructure Development</li>
@@ -168,9 +194,9 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
-            className="mt-2 pt-5 pb-5 px-10 flex flex-col md:flex-row justify-between items-center"
+            className="mt-2 pt-5 pb-5 px-6 sm:px-10 flex flex-col md:flex-row justify-between items-center text-center gap-3"
           >
-            <div className="flex space-x-4 mb-4 md:mb-0">
+            <div className="flex space-x-4">
               <a href="#" className="text-white hover:text-white">
                 <Facebook className="h-5 w-5" />
               </a>
@@ -184,7 +210,7 @@ export default function Footer() {
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
-            <p className="text-white text-center md:text-lg text-sm">
+            <p className="text-white text-xs sm:text-sm md:text-base">
               © {new Date().getFullYear()} UK Tunnel and Building Construction
               India Pvt. Ltd. All rights reserved.
             </p>
