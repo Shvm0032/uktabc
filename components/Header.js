@@ -3,7 +3,16 @@
 import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ChevronDown, Menu, X, Phone, Mail, Instagram, Facebook, Youtube } from "lucide-react";
+import {
+  ChevronDown,
+  Menu,
+  X,
+  Phone,
+  Mail,
+  Instagram,
+  Facebook,
+  Youtube,
+} from "lucide-react";
 import Image from "next/image";
 
 export default function Header() {
@@ -15,10 +24,13 @@ export default function Header() {
   const mobileServicesRef = useRef(null);
 
   const services = [
-    { name: "Tunnel Construction", href: "#" },
-    { name: "Building Construction", href: "#" },
-    { name: "Infrastructure Development", href: "#" },
-    { name: "Project Management", href: "#" },
+    { name: "Tunnel", href: "/services/tunnel" },
+    // { name: "MEP", href: "/services/mep" },
+    { name: "WaterProofing", href: "/services/WaterProofing" },
+    { name: "Injection Grouting", href: "/services/Injection-grouting" },
+    { name: "Coastal Protection", href: "/services/coastal-protection" },
+    { name: "Slope Protection/Retaining Wall", href: "/services/slope-protection-retaining-wall" },
+    { name: "Precast", href: "/services/precast" },
   ];
 
   useEffect(() => {
@@ -79,7 +91,11 @@ export default function Header() {
       </div>
 
       {/* Main Header */}
-      <motion.header initial={{ y: -100 }} animate={{ y: 0 }} className="sticky top-0 bg-white shadow-lg z-50">
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className="sticky top-0 bg-white shadow-lg z-50"
+      >
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Left Logo */}
@@ -165,23 +181,48 @@ export default function Header() {
 
             {/* Right Logo */}
             <Link href="/" className="hidden md:flex items-center">
-              <Image src="/Assets/logo/KKTBS-logo.png" alt="Company Logo Right" width={100} height={50} className="rounded-lg" />
+              <Image
+                src="/Assets/logo/KKTBS-logo.png"
+                alt="Company Logo Right"
+                width={100}
+                height={50}
+                className="rounded-lg"
+              />
             </Link>
 
             {/* Mobile Menu Toggle */}
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2">
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} className="md:hidden border-t bg-white">
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              className="md:hidden border-t bg-white"
+            >
               <div className="py-4 space-y-4">
-                <Link href="/" className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50" onClick={closeMobileMenu}>
+                <Link
+                  href="/"
+                  className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
+                  onClick={closeMobileMenu}
+                >
                   Home
                 </Link>
-                <Link href="/about-us" className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50" onClick={closeMobileMenu}>
+                <Link
+                  href="/about-us"
+                  className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
+                  onClick={closeMobileMenu}
+                >
                   About Us
                 </Link>
 
@@ -193,7 +234,9 @@ export default function Header() {
                   >
                     <span>Services</span>
                     <ChevronDown
-                      className={`h-4 w-4 transition-transform duration-300 ${isMobileServicesOpen ? "rotate-180" : ""}`}
+                      className={`h-4 w-4 transition-transform duration-300 ${
+                        isMobileServicesOpen ? "rotate-180" : ""
+                      }`}
                     />
                   </div>
 
@@ -217,16 +260,32 @@ export default function Header() {
                   )}
                 </div>
 
-                <Link href="/our-team" className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50" onClick={closeMobileMenu}>
+                <Link
+                  href="/our-team"
+                  className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
+                  onClick={closeMobileMenu}
+                >
                   Our Team
                 </Link>
-                <Link href="/gallery" className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50" onClick={closeMobileMenu}>
+                <Link
+                  href="/gallery"
+                  className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
+                  onClick={closeMobileMenu}
+                >
                   Gallery
                 </Link>
-                <Link href="/contact-us" className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50" onClick={closeMobileMenu}>
+                <Link
+                  href="/contact-us"
+                  className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
+                  onClick={closeMobileMenu}
+                >
                   Contact Us
                 </Link>
-                <Link href="/career" className="block px-4 py-2 text-brand-blue font-semibold hover:bg-gray-50" onClick={closeMobileMenu}>
+                <Link
+                  href="/career"
+                  className="block px-4 py-2 text-brand-blue font-semibold hover:bg-gray-50"
+                  onClick={closeMobileMenu}
+                >
                   Career
                 </Link>
               </div>
