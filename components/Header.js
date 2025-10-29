@@ -161,9 +161,11 @@ export default function Header() {
               </div>
 
               {[
-                { name: "Our Team", href: "/our-team" },
+                { name: "Team", href: "/our-team" },
+                { name: "Key Management", href: "/keymanagement" },
+                { name: "Achievements", href: "/our-achievements" },
                 { name: "Gallery", href: "/gallery" },
-                { name: "Contact Us", href: "/contact-us" },
+                { name: "Contact", href: "/contact-us" },
                 { name: "Career", href: "/career" },
               ].map((link) => (
                 <Link
