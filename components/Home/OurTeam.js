@@ -27,7 +27,7 @@ const OurTeam = () => {
       designation: "Chief Executive Engineer",
     },
     {
-      img: "/Assets/team/Yogita.jpg",
+      img: "/Assets/team/Shivi.png",
       name: "Shivi Kathait",
       designation: "General Manager (Civil)",
     },

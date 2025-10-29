@@ -12,7 +12,7 @@ import {
 const teamMembers = [
   {
     name: "Kunwar Singh Negi",
-    position: "(Chairman & MD)",
+    position: "(Chairman & MD)",
     image: "/Assets/team/kunwar.jpg",
   },
   { name: "Rekha Negi", position: "Director", image: "/Assets/team/rekha.jpg" },
@@ -24,13 +24,14 @@ const teamMembers = [
   {
     name: "Shivi Kathait",
     position: "General Manager (Civil)",
-    image: "/Assets/team/Yogita.jpg",
+    image: "/Assets/team/Shivi.png",
   },
   {
     name: "Amisha Bhandari",
-    position: "Company Secretary & Finance",
+    position: "Company Secretary & Finance",
     image: "/Assets/team/aradhna.jpg",
   },
+  
 ];
 
 export default function OurTeam() {
@@ -38,7 +39,7 @@ export default function OurTeam() {
     <div className="min-h-screen">
       {/* Team Section */}
       <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -55,8 +56,8 @@ export default function OurTeam() {
             </p>
           </motion.div>
 
-          {/* Flex container for cards */}
-          <div className="flex flex-wrap justify-center gap-8">
+          {/* Responsive grid for cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={index}
@@ -64,51 +65,59 @@ export default function OurTeam() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden w-full sm:w-[300px]"
+                whileHover={{ y: -8 }}
+                className="relative group rounded-2xl overflow-hidden p-[2px] 
+                           bg-gradient-to-r from-[#041151] via-[#6F1B17] to-[#041151]
+                           bg-[length:200%_200%] animate-borderFlow
+                           shadow-lg hover:shadow-2xl transition-all duration-500 
+                           w-full max-w-sm flex flex-col justify-between"
               >
-                <div className="relative">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-[350px] object-content"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                </div>
+                <div className="bg-white rounded-2xl overflow-hidden flex flex-col h-full">
+                  <div className="relative">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-[300px] object-content group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  </div>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#041151] mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-[#6F1B17] text-base font-semibold mb-2">
-                    {member.position}
-                  </p>
+                  <div className="p-6 text-center flex flex-col flex-grow justify-between">
+                    <div>
+                      <h3 className="text-xl font-bold text-[#041151] mb-1">
+                        {member.name}
+                      </h3>
+                      <p className="text-[#6F1B17] text-base font-semibold mb-3">
+                        {member.position}
+                      </p>
+                    </div>
 
-                  <div className="flex space-x-3 pt-4 border-t">
-                    <a
-                      href="#"
-                      className="text-[#6F1B17] hover:text-brand-blue transition-colors"
-                    >
-                      <FaFacebookF className="h-4 w-4" />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-[#6F1B17] hover:text-brand-blue transition-colors"
-                    >
-                      <FaTwitter className="h-4 w-4" />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-[#6F1B17] hover:text-brand-blue transition-colors"
-                    >
-                      <FaLinkedinIn className="h-4 w-4" />
-                    </a>
-                    <a
-                      href="#"
-                      className="text-[#6F1B17] hover:text-brand-blue transition-colors"
-                    >
-                      <FaInstagram className="h-4 w-4" />
-                    </a>
+                    <div className="flex justify-center space-x-4 pt-4 border-t border-gray-200 mt-auto">
+                      <a
+                        href="#"
+                        className="text-[#6F1B17] hover:text-[#041151] transition-colors"
+                      >
+                        <FaFacebookF className="h-4 w-4" />
+                      </a>
+                      <a
+                        href="#"
+                        className="text-[#6F1B17] hover:text-[#041151] transition-colors"
+                      >
+                        <FaTwitter className="h-4 w-4" />
+                      </a>
+                      <a
+                        href="#"
+                        className="text-[#6F1B17] hover:text-[#041151] transition-colors"
+                      >
+                        <FaLinkedinIn className="h-4 w-4" />
+                      </a>
+                      <a
+                        href="#"
+                        className="text-[#6F1B17] hover:text-[#041151] transition-colors"
+                      >
+                        <FaInstagram className="h-4 w-4" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -149,3 +158,5 @@ export default function OurTeam() {
     </div>
   );
 }
+
+
