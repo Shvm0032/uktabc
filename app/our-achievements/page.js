@@ -1,6 +1,6 @@
 'use client';
 import Appreciation from "../../components/Download/Appreciation";
-import AchievementHero from "../../components/Download/achievementHero";
+import AchievementHero from "../../components/Download/AchievementHero";
 import Certificate from "../../components/Download/Certificate";
 
 export default function Gallery() {
