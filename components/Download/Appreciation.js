@@ -9,20 +9,23 @@ export default function Appreciation() {
   const [zoomed, setZoomed] = useState(false);
 
   const images = [
-    "/Assets/gallery/img1.jpg",
-    "/Assets/gallery/img2.jpg",
-    "/Assets/gallery/img3.jpg",
-    "/Assets/gallery/img4.jpg",
-    "/Assets/gallery/img5.jpg",
-    "/Assets/gallery/img6.jpg",
+    "/Assets/dummy-img.png",
+    "/Assets/dummy-img.png",
+    "/Assets/dummy-img.png",
+    "/Assets/dummy-img.png",
+    "/Assets/dummy-img.png",
+    "/Assets/dummy-img.png",
+    
   ];
 
   return (
-    <section className="py-20 bg-gray-50 relative">
-      {/* Gradient Heading */}
-      <div className="text-center mb-12">
-        <div className="inline-block px-10 py-3 rounded-full bg-gradient-to-r from-[#041151] via-[#6F1B17] to-[#041151] text-white text-md md:text-xl font-semibold shadow-md">
-          Letter of Appreciation
+    <section className="py-10 bg-gray-50 relative">
+      {/* Gradient Heading (max-w-5xl) */}
+      <div className="w-full py-8">
+        <div className="mx-auto max-w-5xl rounded-lg p-2 bg-gradient-to-r from-[#041151] via-[#6F1B17] to-[#041151] text-white text-center shadow-md">
+          <h2 className="text-xl md:text-2xl font-semibold">
+            Letter of Appreciation
+          </h2>
         </div>
       </div>
 

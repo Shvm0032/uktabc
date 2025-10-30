@@ -8,60 +8,7 @@ import ServiceData from "@/app/services/ServiceData.json";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-// const services = [
-//   {
-//     icon: Drill,
-//     title: "Tunnel Construction",
-//     description:
-//       "Specialized in underground tunnel construction for metro systems, highways, and water management projects.",
-//     features: [
-//       "Metro tunnel construction",
-//       "Highway tunnel boring",
-//       "Underground water channels",
-//       "Utility tunnel systems",
-//       "Safety and ventilation systems",
-//     ],
-//   },
-//   {
-//     icon: Building2,
-//     title: "Building Construction",
-//     description:
-//       "Complete building construction services from residential complexes to commercial and industrial facilities.",
-//     features: [
-//       "Residential complexes",
-//       "Commercial buildings",
-//       "Industrial facilities",
-//       "Educational institutions",
-//       "Healthcare facilities",
-//     ],
-//   },
-//   {
-//     icon: Road,
-//     title: "Infrastructure Development",
-//     description:
-//       "Comprehensive infrastructure development including roads, bridges, and urban development projects.",
-//     features: [
-//       "Highway construction",
-//       "Bridge construction",
-//       "Urban development",
-//       "Airport infrastructure",
-//       "Port development",
-//     ],
-//   },
-//   {
-//     icon: Settings,
-//     title: "Project Management",
-//     description:
-//       "End-to-end project management services ensuring timely delivery and quality control.",
-//     features: [
-//       "Project planning & design",
-//       "Quality assurance",
-//       "Safety management",
-//       "Resource optimization",
-//       "Timeline management",
-//     ],
-//   },
-// ];
+
 
 export default function Services() {
   const router = useRouter();
@@ -88,18 +35,7 @@ export default function Services() {
             </p>
           </motion.div>
 
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                features={service.features}
-                delay={index * 0.2}
-              />
-            ))}
-          </div> */}
+          
 
           {/* //////////////////// My Service Section //////////////////// */}
           <div className="grid grid-cols-3 gap-6 mt-20">

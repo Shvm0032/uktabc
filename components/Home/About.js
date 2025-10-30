@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Building2, Shield } from "lucide-react";
 import { FaHardHat } from "react-icons/fa";
 import { MdFactory } from "react-icons/md";
@@ -25,7 +26,7 @@ const About = () => {
             </h3>
             <p className="text-gray-700 mb-4 leading-relaxed text-justify">
               UK Tunnel and Building Construction India Pvt. Ltd. is dedicated
-              to delivering world-class infrastructure solutions. With years of
+              to delivering world-class infrastructure solutions. With 25+ years of
               experience in tunnel construction, building projects, and
               large-scale developments, we ensure quality, safety, and
               sustainability in everything we do.
@@ -34,9 +35,11 @@ const About = () => {
               Our mission is to shape the future of infrastructure in India
               through innovation, dedication, and precision engineering.
             </p>
+            <Link href="/about-us">
             <button className="bg-gradient-to-r mt-4 from-[#6B1B1B] to-[#141249] text-white px-5 py-2  rounded-full transform transition-all duration-200 hover:scale-95">
               Read More
             </button>
+            </Link>
           </div>
 
           {/* Right Image */}

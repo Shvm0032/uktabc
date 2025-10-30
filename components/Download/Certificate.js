@@ -9,22 +9,24 @@ export default function Certificate() {
   const [zoomed, setZoomed] = useState(false);
 
   const images = [
-    "/Assets/gallery/img1.jpg",
-    "/Assets/gallery/img2.jpg",
-    "/Assets/gallery/img3.jpg",
-    "/Assets/gallery/img4.jpg",
-    "/Assets/gallery/img5.jpg",
-    "/Assets/gallery/img6.jpg",
+    "/Assets/dummy-img.png",
+    "/Assets/dummy-img.png",
+    "/Assets/dummy-img.png",
+    "/Assets/dummy-img.png",
+    "/Assets/dummy-img.png",
+    "/Assets/dummy-img.png",
+    
   ];
 
   return (
-    <section className="py-20 bg-gray-50 relative">
+    <section className="py-10 bg-gray-50 relative">
       {/* Gradient Heading */}
-      <div className="text-center mb-12">
-        <div className="inline-block px-10 py-3 rounded-full bg-gradient-to-r from-[#041151] via-[#6F1B17] to-[#041151] text-white text-md md:text-xl font-semibold shadow-md">
-          Certificate of Registration
+     
+      <div className="mx-auto max-w-5xl mb-8 rounded-lg p-2 bg-gradient-to-r from-[#041151] via-[#6F1B17] to-[#041151] text-white text-center shadow-md">
+          <h2 className="text-xl md:text-2xl font-semibold">
+            Certificate of Registration
+          </h2>
         </div>
-      </div>
 
       {/* Image Grid */}
       <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
