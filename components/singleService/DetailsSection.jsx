@@ -12,7 +12,7 @@ const detailsData = [
             "Depending upon site requirement, performance can be achieved using different accelerators requiring high skill and specialized equipment.",
         ],
         points: [
-            "Crack Sealing and Concrete Repair",
+            "Crack Sealingh and Concrete Repair",
             "Ground consolidation and stabilization",
             "Arresting water and air permeation",
             "Cavity Filling",
