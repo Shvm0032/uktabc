@@ -26,7 +26,7 @@ const AboutUs = () => {
           </h3>
           <p className="text-gray-700 mb-4 leading-relaxed text-justify">
             UK Tunnel and Building Construction India Pvt. Ltd. is dedicated to
-            delivering world-class infrastructure solutions. With years of
+            delivering world-class infrastructure solutions. With 25+ years of
             experience in tunnel construction, building projects, and
             large-scale developments, we ensure quality, safety, and
             sustainability in everything we do.
