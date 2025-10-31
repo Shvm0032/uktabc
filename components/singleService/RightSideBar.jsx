@@ -17,7 +17,7 @@ const RightSideBar = ({ service }) => {
                 <Image
                     src={service?.mainImage}
                     alt={service?.heading}
-                    className="rounded-md w-auto h-[400px]  object-cover"
+                    className="rounded-md w-full h-[400px]  object-cover"
                     height={100}
                     width={100}
                 />

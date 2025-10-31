@@ -5,45 +5,59 @@ import Divider from "../Divider";
 const team = [
   {
     id: 1,
-    name: "Rajesh Sharma",
-    designation: "Managing Director",
-    image: "/Assets/team/person1.jpg",
+    name: "Aradhna Sariyal",
+    designation: "IT/Data Entry",
+    image: "/Assets/team/aradhna.jpg",
   },
   {
     id: 2,
-    name: "Anita Verma",
-    designation: "Project Head",
-    image: "/Assets/team/person2.jpg",
+    name: "Arti Choudhary",
+    designation: "Manager Mechanical",
+    image: "/Assets/team/arti.jpg",
   },
   {
     id: 3,
-    name: "Rohit Mehta",
-    designation: "Operations Manager",
-    image: "/Assets/team/person3.jpg",
+    name: "Mohan Singh",
+    designation: "Manager Grouting",
+    image: "/Assets/team/mohan.jpg",
   },
   {
     id: 4,
-    name: "Kavita Singh",
-    designation: "Finance Head",
-    image: "/Assets/team/person4.jpg",
+    name: "Umed Negi",
+    designation: "Manager Fabrication",
+    image: "/Assets/team/umid.jpg",
   },
   {
     id: 5,
-    name: "Suresh Patil",
-    designation: "Technical Advisor",
-    image: "/Assets/team/person5.jpg",
+    name: "Jay Negi",
+    designation: "Asst. Manager (Civil)",
+    image: "/Assets/team/jay.jpg",
   },
   {
     id: 6,
-    name: "Pooja Nair",
-    designation: "HR Manager",
-    image: "/Assets/team/person6.jpg",
+    name: "Pankaj Singh",
+    designation: "Asst. Manager UGSS",
+    image: "/Assets/team/Pankaj.jpg",
   },
+  {
+    id: 7,
+    name: "Davendra Singh",
+    designation: "Asst. Manager UGSS",
+    image: "/Assets/team/Davendra.jpg",
+  },
+  {
+    id: 8,
+    name: "Robin Aswal",
+    designation: "Asst. Manager (Civil)",
+    image: "/Assets/team/Robin.jpg",
+  },
+  
+  
 ];
 
 export default function KeyManagement() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-[#F1F5F9]">
       <div className="container mx-auto px-4 text-center">
         {/* Heading */}
         <h2 className="text-3xl mb-5 md:text-4xl font-bold text-gray-800">
@@ -60,12 +74,12 @@ export default function KeyManagement() {
               key={member.id}
               className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 relative"
             >
-              <div className="w-full h-60 relative">
+              <div className="w-full h-[250px] relative">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="object-cover"
+                  className="object-content"
                 />
               </div>
               <div className="p-4">

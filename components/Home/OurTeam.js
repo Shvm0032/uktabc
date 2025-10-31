@@ -32,7 +32,7 @@ const OurTeam = () => {
       designation: "General Manager (Civil)",
     },
     {
-      img: "/Assets/team/aradhna.jpg",
+      img: "/Assets/team/amisha.png",
       name: "Amisha Bhandari",
       designation: "Company Secretary & Finance",
     },

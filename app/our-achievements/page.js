@@ -6,7 +6,7 @@ import Company from "../../components/Download/Company";
 import Articles from "../../components/Download/Articles";
 import Galleries from "../../components/Download/Galleries";
 
-export default function Gallery() {
+export default function OurAchievements() {
   return (
     <div className="min-h-screen">
       <AchievementHero/>

@@ -3,7 +3,7 @@ import CareersHero from '../../components/Careers/CareersHero';
 import JobOpeningSection from '../../components/Careers/JobOpeningSection';
 import ApplicationProcess from '../../components/Careers/ApplicationProcess';
 
-export default function Gallery() {
+export default function Career() {
   return (
     <div className="min-h-screen">
       

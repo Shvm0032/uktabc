@@ -23,7 +23,7 @@ export default function TeamPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl mt-20 sm:mt-0  md:text-6xl font-bold mb-4"
           >
-            Meet Our Team
+            Our Leadership & Team
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}

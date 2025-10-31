@@ -2,7 +2,7 @@
   {
     "slug": "tunneling-and-grouting",
     "heading": "Tunneling and Grouting",
-    "mainImage": "/Assets/gallery/tunnel/tunnel1.jpg",
+    "mainImage": "/Assets/services/tunnel/tunnel101.jpg",
     "discription": [
       "Tunneling is one of the core competencies of UKTABC. The company has been involved as a sub- contractor, family partner specialist and manufacturer of grouting equipment for the execution of mechanized and conventional tunnel construction works in relation to large and complex projects in India.",
       "UKTABC is an expert for underground and building works in both urban and remote areas in various kinds of geological conditions.",
@@ -27,23 +27,24 @@
   {
     "slug": "WaterProofing",
     "heading": "WaterProofing",
-    "mainImage": "/Assets/gallery/tunnel/tunnel2.jpg",
+    "mainImage": "/Assets/services/waterprofing/waterproofing11.jpg",
     "discription": [
       "At UKTABC, we provide reliable waterproofing solutions that protect structures from water damage and extend their lifespan. Our team uses advanced materials and proven techniques to ensure complete surface protection. We focus on quality workmanship to prevent leaks and moisture infiltration.",
       "Whether it’s residential, commercial, or industrial projects, UKTABC delivers waterproofing services tailored to every need. From basements to rooftops, our solutions ensure long-term durability and safety. We help you maintain the integrity and strength of your property through expert care."
     ],
     "details": [
       {
-        "image": "/Assets/gallery/tunnel/tunnel2.jpg",
+        "image": "/Assets/services/waterprofing/waterproofing12.jpg",
         "heading": "",
         "discription": "UKTABC specializes in advanced waterproofing systems designed to safeguard buildings from seepage, cracks, and dampness. Our process begins with detailed surface inspection and material selection suited to each project’s environment. We use high-quality membranes, coatings, and sealants that provide superior protection against water intrusion. Our expert team ensures flawless application and long-lasting performance. From foundation waterproofing to terrace coatings, we handle all aspects with precision. Each project is executed with strict quality control and adherence to safety standards. At UKTABC, we aim to deliver sustainable and cost-effective solutions that stand the test of time. Your structure’s strength and durability are our top priorities."
       }
     ],
     "images": [
-      "/Assets/gallery/tunnel/tunnel2.jpg",
-      "/Assets/gallery/tunnel/tunnel2.jpg",
-      "/Assets/gallery/tunnel/tunnel2.jpg",
-      "/Assets/gallery/tunnel/tunnel2.jpg"
+      "/Assets/services/waterprofing/waterproofing11.jpg",
+      "/Assets/services/waterprofing/waterproofing12.jpg",
+      "/Assets/services/waterprofing/waterproofing13.jpg",
+      "/Assets/services/waterprofing/waterproofing14.jpg"
+      
       
     ]
   },
@@ -111,7 +112,7 @@
     ],
     "details": [
       {
-        "image": "/Assets/gallery/tunnel/tunnel2.jpg",
+        "image": "/Assets/services/slope/returning-wall.jpg",
         "heading": "Retaining Wall",
         "discription": "UKTABC specializes in designing and constructing slope protection and retaining wall systems that provide essential support and prevent land movement. We use modern engineering practices, high-quality materials, and detailed geotechnical analysis for every project. Our services include reinforced earth walls, gabion structures, shotcrete applications, and soil nailing solutions. Each project is executed with precision to ensure structural safety and sustainability. We prioritize environmental balance while enhancing ground stability. Our expert engineers design retaining systems that perform effectively under varying soil and weather conditions. At UKTABC, we are committed to delivering reliable, durable, and maintenance-free slope stabilization solutions. Our goal is to protect your structures and landscapes for years to come."
       }
@@ -144,6 +145,30 @@
       "/Assets/gallery/tunnel/tunnel2.jpg",
       "/Assets/gallery/tunnel/tunnel2.jpg",
       "/Assets/gallery/tunnel/tunnel2.jpg"
+    
+    ]
+  },
+  {
+    "slug": "building-construction",
+    "heading": "Building Construction",
+    "mainImage": "/Assets/services/building/building-construction1.jpg",
+    "discription": [
+      "At UKTABC, we specialize in high-quality precast concrete solutions that offer strength, precision, and efficiency. Our precast components are manufactured under controlled conditions to ensure superior quality and consistency. We deliver durable structures that save both time and cost.",
+      "Our team at UKTABC designs and produces a wide range of precast elements, including walls, beams, slabs, and drainage units. Each product is crafted using advanced technology and strict quality standards. We ensure fast installation with minimal on-site disruption.",
+      "UKTABC focuses on innovation and sustainability in every precast project we deliver. Our solutions enhance construction speed, reduce waste, and improve performance. We take pride in delivering reliable and customized precast systems for every infrastructure need."
+    ],
+    "details": [
+      {
+        "image": "/Assets/services/building/building-construction2.jpg",
+        "discription": "UKTABC offers comprehensive precast concrete solutions designed to meet modern construction demands. Our precast systems provide superior durability, dimensional accuracy, and faster project turnaround. Manufactured in a controlled environment, each unit undergoes rigorous testing to ensure quality and strength. From industrial buildings to residential and infrastructure projects, our precast products are built to last. We provide customized solutions that align with architectural and structural requirements. Our skilled team ensures efficient logistics, installation, and finishing on-site. At UKTABC, we combine innovation, engineering expertise, and sustainability to deliver dependable results. Our goal is to simplify construction while maintaining the highest standards of safety and performance."
+      }
+    ],
+    "images": [
+      "/Assets/services/building/building-construction1.jpg",
+      "/Assets/services/building/building-construction2.jpg",
+      "/Assets/services/building/building-construction4.jpg",
+      "/Assets/services/building/building-construction3.jpg"
+      
     
     ]
   }

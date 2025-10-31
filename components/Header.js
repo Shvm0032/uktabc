@@ -31,6 +31,7 @@ export default function Header() {
     { name: "Coastal Protection", href: "/services/coastal-protection" },
     { name: "Slope Protection/Retaining Wall", href: "/services/slope-protection-retaining-wall" },
     { name: "Precast", href: "/services/precast" },
+    { name: "Building Construction", href: "/services/building-construction" },
   ];
 
   useEffect(() => {
@@ -161,8 +162,7 @@ export default function Header() {
               </div>
 
               {[
-                { name: "Team", href: "/our-team" },
-                { name: "Key Management", href: "/keymanagement" },
+                { name: "Our Leadership & Team", href: "/our-leadership-and-team" },
                 { name: "Achievements", href: "/our-achievements" },
                 { name: "Gallery", href: "/gallery" },
                 { name: "Contact", href: "/contact-us" },
