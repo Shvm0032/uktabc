@@ -51,6 +51,12 @@ const team = [
     designation: "Asst. Manager (Civil)",
     image: "/Assets/team/Robin.jpg",
   },
+  {
+    id: 9,
+    name: "Neeraj Kumar",
+    designation: "Waterproofing Manager",
+    image: "/Assets/team/neeraj.jpg",
+  },
   
   
 ];

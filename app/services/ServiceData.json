@@ -103,7 +103,7 @@
   {
     "slug": "slope-protection-retaining-wall",
     "heading": "Slope Protection/Retaining Wall",
-    "mainImage": "/Assets/gallery/tunnel/tunnel2.jpg",
+    "mainImage": "/Assets/services/slope/slope.jpg",
     "secondHeading": "Slope Protection",
     "discription": [
       "At UKTABC, we provide reliable slope protection and retaining wall solutions that prevent soil erosion and enhance ground stability. Our designs are engineered to withstand environmental stress and heavy loads. We combine innovation with precision to deliver lasting structural integrity.",
@@ -118,10 +118,10 @@
       }
     ],
     "images": [
-      "/Assets/gallery/tunnel/tunnel2.jpg",
-      "/Assets/gallery/tunnel/tunnel2.jpg",
-      "/Assets/gallery/tunnel/tunnel2.jpg",
-      "/Assets/gallery/tunnel/tunnel2.jpg"
+      "/Assets/services/slope/slope.jpg",
+      "/Assets/services/slope/returning-wall.jpg",
+      "/Assets/services/slope/slope1.jpg"
+     
       
     ]
   },

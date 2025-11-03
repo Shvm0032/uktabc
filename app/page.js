@@ -7,6 +7,7 @@ import OurTeam from '../components/Home/OurTeam';
 import GallerySlider from '../components/Home/GallerySlider';
 import Achivements from '../components/Home/Achivements';
 import Services from '../components/Home/Services';
+import Specialist from '../components/Home/Specialist';
 
 export default function Home() {
   return (
@@ -16,12 +17,10 @@ export default function Home() {
       <About/>
       <Services/>
       <Achivements />
+       <Specialist/>
       <OurTeam/>
       <Testimonials />
-      <GallerySlider/>
-  
-
-      
+      <GallerySlider/> 
     </div>
   );
 }

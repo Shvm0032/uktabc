@@ -30,10 +30,18 @@ export default function StudentActivities() {
         "/Assets/gallery/tunnel/tunnel7.jpg",
         "/Assets/gallery/tunnel/tunnel8.jpg",
         "/Assets/gallery/tunnel/tunnel9.jpg",
+        "/Assets/services/building/building-construction1.jpg",
+        "/Assets/services/building/building-construction2.jpg",
+        "/Assets/services/building/building-construction3.jpg",
+        "/Assets/services/building/building-construction4.jpg",
+        "/Assets/services/waterprofing/waterproofing11.jpg",
+        "/Assets/services/waterprofing/waterproofing12.jpg",
+        "/Assets/services/waterprofing/waterproofing13.jpg",
+        "/Assets/services/waterprofing/waterproofing14.jpg",
       ],
     },
     {
-      title: "Tunnel Construction",
+      title: "Tunnel",
       images: [
         "/Assets/gallery/tunnel/tunnel1.jpg",
         "/Assets/gallery/tunnel/tunnel2.jpg",
@@ -47,19 +55,22 @@ export default function StudentActivities() {
       ],
     },
     {
-      title: "Building Construction",
+      title: "Building",
       images: [
-        "/Assets/gallery/img102.jpg",
-        "/Assets/gallery/img103.jpg",
-        "/Assets/gallery/img104.jpg",
+        "/Assets/services/building/building-construction1.jpg",
+        "/Assets/services/building/building-construction2.jpg",
+        "/Assets/services/building/building-construction3.jpg",
+        "/Assets/services/building/building-construction4.jpg",
+       
       ],
     },
     {
-      title: "Infrastructure",
+      title: "Waterproofing",
       images: [
-        "/Assets/gallery/img102.jpg",
-        "/Assets/gallery/img103.jpg",
-        "/Assets/gallery/img104.jpg",
+        "/Assets/services/waterprofing/waterproofing11.jpg",
+        "/Assets/services/waterprofing/waterproofing12.jpg",
+        "/Assets/services/waterprofing/waterproofing13.jpg",
+        "/Assets/services/waterprofing/waterproofing14.jpg",
       ],
     },
   ];
