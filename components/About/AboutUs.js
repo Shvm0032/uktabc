@@ -40,7 +40,7 @@ const AboutUs = () => {
         {/* Right Image */}
         <div className="flex justify-center">
           <Image
-            src="/Assets/home-slider/home-slider-2.jpg"
+            src="/Assets/about/about.jpg"
             alt="About Image"
             width={100}
             height={100}

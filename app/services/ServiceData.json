@@ -34,8 +34,8 @@
     ],
     "details": [
       {
-        "image": "/Assets/services/waterprofing/waterproofing12.jpg",
-        "heading": "",
+        "image": "/Assets/services/waterprofing/waterproofing-pvc.jpg",
+        "heading": "Waterproofing (PVC MAMBRAN INSTALLATION WORK)",
         "discription": "UKTABC specializes in advanced waterproofing systems designed to safeguard buildings from seepage, cracks, and dampness. Our process begins with detailed surface inspection and material selection suited to each project’s environment. We use high-quality membranes, coatings, and sealants that provide superior protection against water intrusion. Our expert team ensures flawless application and long-lasting performance. From foundation waterproofing to terrace coatings, we handle all aspects with precision. Each project is executed with strict quality control and adherence to safety standards. At UKTABC, we aim to deliver sustainable and cost-effective solutions that stand the test of time. Your structure’s strength and durability are our top priorities."
       }
     ],
@@ -43,7 +43,8 @@
       "/Assets/services/waterprofing/waterproofing11.jpg",
       "/Assets/services/waterprofing/waterproofing12.jpg",
       "/Assets/services/waterprofing/waterproofing13.jpg",
-      "/Assets/services/waterprofing/waterproofing14.jpg"
+      "/Assets/services/waterprofing/waterproofing14.jpg",
+      "/Assets/services/waterprofing/waterproofing-pvc.jpg"
       
       
     ]

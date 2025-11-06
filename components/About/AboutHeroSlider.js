@@ -11,7 +11,7 @@ export default function AboutUs() {
         className="relative h-[80vh] flex items-center justify-center text-white"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(0, 16, 83, 0.4), rgba(118, 28, 20, 0.4)), url(/Assets/about/uktabc.jpg)",
+            "linear-gradient(rgba(0, 16, 83, 0.4), rgba(118, 28, 20, 0.4)), url(/Assets/about/about-121.jpg)",
 
           backgroundSize: "cover",
           backgroundPosition: "center",

@@ -145,13 +145,13 @@ export default function Header() {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="absolute top-full left-0 p-5 mt-0 w-64 bg-white rounded-lg shadow-xl border z-50"
+                    className="text-sm absolute top-full left-0 pt-5 px-2 mt-0 w-64 bg-white rounded-lg shadow-xl border z-50"
                   >
                     {services.map((service) => (
                       <Link
                         key={service.name}
                         href={service.href}
-                        className="block px-4 py-3 text-gray-700 hover:bg-[#0D114C] hover:text-white transition-colors first:rounded-t-lg last:rounded-b-lg"
+                        className="block px-2 py-2 text-gray-700 hover:bg-[#0D114C] hover:text-white transition-colors first:rounded-t-lg last:rounded-b-lg"
                         onClick={() => setIsDesktopServicesOpen(false)}
                       >
                         {service.name}
