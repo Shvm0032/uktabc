@@ -13,7 +13,7 @@ const HeroSection = ({service}) => {
 
       {/* Text */}
       <div className="relative text-center z-10">
-        <h1 className="text-white text-4xl md:text-6xl font-bold uppercase tracking-wide">
+        <h1 className="text-white text-xl md:text-6xl font-bold uppercase tracking-wide">
           {service?.heading.toUpperCase()}
         </h1>
       </div>

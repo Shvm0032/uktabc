@@ -261,11 +261,11 @@ export default function Header() {
                 </div>
 
                 <Link
-                  href="/our-team"
+                  href="/our-leadership-and-team"
                   className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
                   onClick={closeMobileMenu}
                 >
-                  Our Team
+                  Our Leadership & Team
                 </Link>
                 <Link
                   href="/gallery"
