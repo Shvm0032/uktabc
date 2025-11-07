@@ -57,7 +57,7 @@ export default function OurTeam() {
           </motion.div>
 
           {/* Responsive grid for cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
+          <div className="grid px-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={index}

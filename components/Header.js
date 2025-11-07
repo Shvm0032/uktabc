@@ -268,6 +268,13 @@ export default function Header() {
                   Our Leadership & Team
                 </Link>
                 <Link
+                  href="/our-achievements"
+                  className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
+                  onClick={closeMobileMenu}
+                >
+                  Achievements
+                </Link>
+                <Link
                   href="/gallery"
                   className="block px-4 py-2 text-gray-700 hover:text-brand-blue hover:bg-gray-50"
                   onClick={closeMobileMenu}

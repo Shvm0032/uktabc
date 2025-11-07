@@ -61,7 +61,7 @@ const team = [
 
 export default function KeyManagement() {
   return (
-    <section className="py-16 bg-[#F1F5F9]">
+    <section className="py-16  bg-[#F1F5F9]">
       <div className="container mx-auto px-4 sm:px-8 lg:px-16 text-center">
         {/* Heading */}
         <h2 className="text-3xl mb-5 md:text-4xl font-bold text-gray-800">
@@ -72,14 +72,14 @@ export default function KeyManagement() {
         <Divider />
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
+        <div className="grid px-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
           {team.map((member) => (
             <div
               key={member.id}
               className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 relative"
             >
               {/* Image */}
-              <div className="w-full h-[250px] relative">
+              <div className="w-full h-[300px] md:h-[250px] relative">
                 <Image
                   src={member.image}
                   alt={member.name}

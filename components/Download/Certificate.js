@@ -9,12 +9,10 @@ export default function Certificate() {
   const [zoomed, setZoomed] = useState(false);
 
   const images = [
-    "/Assets/dummy-img.png",
-    "/Assets/dummy-img.png",
-    "/Assets/dummy-img.png",
-    "/Assets/dummy-img.png",
-    "/Assets/dummy-img.png",
-    "/Assets/dummy-img.png",
+    "/Assets/exp-certi/exp-certificate-uktabc.jpg",
+    "/Assets/exp-certi/ritwik-work-exp-certi.jpg",
+    "/Assets/exp-certi/Uktabc-exp-letter.jpg",
+    
     
   ];
 
