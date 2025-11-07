@@ -57,29 +57,28 @@ const team = [
     designation: "Waterproofing Manager",
     image: "/Assets/team/neeraj.jpg",
   },
-  
-  
 ];
 
 export default function KeyManagement() {
   return (
     <section className="py-16 bg-[#F1F5F9]">
-      <div className="container mx-auto px-4 text-center">
+      <div className="container mx-auto px-4 sm:px-8 lg:px-16 text-center">
         {/* Heading */}
         <h2 className="text-3xl mb-5 md:text-4xl font-bold text-gray-800">
           Key Management
         </h2>
 
         {/* Divider */}
-        <Divider/>
+        <Divider />
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 px-36 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
           {team.map((member) => (
             <div
               key={member.id}
-              className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 relative"
+              className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 relative"
             >
+              {/* Image */}
               <div className="w-full h-[250px] relative">
                 <Image
                   src={member.image}
@@ -88,6 +87,8 @@ export default function KeyManagement() {
                   className="object-content"
                 />
               </div>
+
+              {/* Text */}
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-gray-800">
                   {member.name}
