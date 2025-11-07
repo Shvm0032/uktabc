@@ -10,35 +10,25 @@ import { FaStar, FaQuoteRight } from "react-icons/fa";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Rahul Sharma",
-      designation: "Client",
-      comment: "Amazing work! The team delivered our project on time and exceeded expectations.",
+      name: "Rajat Saxena",
+      designation: "CEO",
+      comment: "We were extremely satisfied with the neatness and quality with which the work was carried out. Since then we have associated with UKTABC on various minor and major construction activities including a new office block done recently. We highly recommend them for any small or big construction work!",
       rating: 5,
     },
     {
-      name: "Priya Singh",
-      designation: "Client",
-      comment: "Professional and reliable. Highly recommended for large-scale construction projects.",
+      name: "Anil Kumar",
+      designation: "Director",
+      comment: "UKTABC managed the encountered problems very professionally. Team is proficient and focused, with a sound work ethic. We wholeheartedly recommend UKTABC for any type of construction job.",
       rating: 5,
     },
     {
-      name: "Amit Kumar",
-      designation: "Client",
-      comment: "Excellent communication and quality work. Truly experts in their field.",
+      name: "Pankaj Goyal",
+      designation: "Managing Director",
+      comment: "Thank you UKTABC for guiding us through the construction process, understanding, and always ready to accommodate our needs. We love our new space and know that it was built by the very best!",
       rating: 4,
     },
-    {
-      name: "Sanya Verma",
-      designation: "Client",
-      comment: "The project management was flawless. We are extremely satisfied with the results.",
-      rating: 5,
-    },
-    {
-      name: "Vikram Patel",
-      designation: "Client",
-      comment: "High-quality infrastructure development and very responsive team. Loved working with them.",
-      rating: 5,
-    },
+    
+    
   ];
 
   return (

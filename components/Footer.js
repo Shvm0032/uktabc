@@ -9,6 +9,7 @@ import {
   Facebook,
   Twitter,
   Linkedin,
+  Youtube,
   Instagram,
 } from "lucide-react";
 import Image from "next/image";
@@ -91,7 +92,7 @@ export default function Footer() {
                   />
                 </Link>
 
-                <p className="text-gray-800 mb-4 leading-relaxed text-sm sm:text-base">
+                <p className="text-gray-800 mb-4 text-justify leading-relaxed text-sm sm:text-base">
                   Leading construction company specializing in tunnel and
                   building projects across India. Committed to quality, safety,
                   and timely delivery.
@@ -102,7 +103,9 @@ export default function Footer() {
                     <MapPin className="h-5 w-5 text-brand-maroon shrink-0 mt-1" />
                     <span className="text-gray-800 leading-tight">
                       <p>UK Tunnel and Building Construction India Pvt. Ltd.</p>
-                      <p>Khasra No. 1540, Ratanpur Nayagaon,</p>
+                      <p>
+                        Khasra No-1535, Ratanpur Nayagaon Simla Bye Paas Road
+                      </p>
                       <p>Dehradun, Uttarakhand, PIN-248007</p>
                     </span>
                   </div>
@@ -151,8 +154,8 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/our-team" className="hover:text-brand-maroon">
-                      Our Team
+                    <Link href="//our-leadership-and-team" className="hover:text-brand-maroon">
+                      Our Leadership & Team
                     </Link>
                   </li>
                   <li>
@@ -174,10 +177,14 @@ export default function Footer() {
               >
                 <h4 className="text-lg font-semibold mb-3 sm:mb-4">Services</h4>
                 <ul className="space-y-2 text-gray-800 text-sm sm:text-base">
-                  <li>Tunnel Construction</li>
-                  <li>Building Construction</li>
-                  <li>Infrastructure Development</li>
-                  <li>Project Management</li>
+                  <Link href="/services/tunneling-and-grouting"><li>Tunneling and Grouting</li></Link>
+                  <Link href="/services/WaterProofing"><li>WaterProofing</li></Link>
+                  <Link href="/services/Injection-grouting"><li>Injection Grouting</li></Link>
+                  <Link href="/services/coastal-protection"><li>Coastal Protection</li></Link>
+                  <Link href="/services/slope-protection-retaining-wall"><li>Slope Protection/Retaining Wall</li></Link>
+                  <Link href="/services/precast"><li>Precast</li></Link>
+                  <Link href="/services/building-construction"><li>Building Construction</li></Link>
+                  
                 </ul>
               </motion.div>
             </div>
@@ -197,16 +204,14 @@ export default function Footer() {
             className="mt-2 pt-5 pb-5 px-6 sm:px-10 flex flex-col md:flex-row justify-between items-center text-center gap-3"
           >
             <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-white">
+              <a href="https://www.facebook.com/uktabc.co.in" target="_blank" className="text-white hover:text-white">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-white hover:text-white">
-                <Twitter className="h-5 w-5" />
+              
+              <a href="https://www.youtube.com/channel/UC_QxTKD6jg82HXcCHlHPhqQ" target="_blank" className="text-white hover:text-white">
+                <Youtube className="h-5 w-5" />
               </a>
-              <a href="#" className="text-white hover:text-white">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-white hover:text-white">
+              <a href="https://www.instagram.com/uktabc.co.in/" target="_blank" className="text-white hover:text-white">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>

@@ -1,30 +1,30 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 
 export default function ContactHero() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    console.log("Form submitted:", formData);
+    alert("Thank you for your message! We will get back to you soon.");
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
   return (
@@ -40,8 +40,10 @@ export default function ContactHero() {
               viewport={{ once: true }}
               className="bg-white rounded-2xl shadow-xl p-8"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-              
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                Send Us a Message
+              </h2>
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -73,7 +75,7 @@ export default function ContactHero() {
                     />
                   </div>
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -108,7 +110,7 @@ export default function ContactHero() {
                     </select>
                   </div>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
                     Message *
@@ -123,7 +125,7 @@ export default function ContactHero() {
                     placeholder="Tell us about your project requirements..."
                   />
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full bg-gradient-to-r from-brand-blue to-brand-maroon text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center"
@@ -142,10 +144,13 @@ export default function ContactHero() {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                  Get in Touch
+                </h2>
                 <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                  Ready to discuss your construction project? Our team of experts is here 
-                  to help you turn your vision into reality. Contact us today for a free consultation.
+                  Ready to discuss your construction project? Our team of
+                  experts is here to help you turn your vision into reality.
+                  Contact us today for a free consultation.
                 </p>
               </div>
 
@@ -155,11 +160,16 @@ export default function ContactHero() {
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">Office Address</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      Office Address
+                    </h3>
                     <p className="text-gray-700">
-                      123 Construction Plaza<br />
-                      Connaught Place, New Delhi - 110001<br />
-                      India
+                      Khasra No-1535, Ratanpur Nayagaon
+                      <br />
+                      Simla Bye Paas Road Dehradun<br/>
+                      (Uttarakhand)India – 248007
+                      <br />
+                      
                     </p>
                   </div>
                 </div>
@@ -169,11 +179,13 @@ export default function ContactHero() {
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">Phone Numbers</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      Phone Numbers
+                    </h3>
                     <p className="text-gray-700">
-                      Office: +91 11 1234 5678<br />
-                      Mobile: +91 98765 43210<br />
-                      Emergency: +91 98765 43211
+                      Office : 0135 2977177 
+                      <br />
+                      Mobile : +91 9917177777
                     </p>
                   </div>
                 </div>
@@ -183,11 +195,12 @@ export default function ContactHero() {
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">Email Addresses</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      Email Addresses
+                    </h3>
                     <p className="text-gray-700">
-                      General: info@uktunnel.in<br />
-                      Projects: projects@uktunnel.in<br />
-                      Careers: careers@uktunnel.in
+                      General:  admin@uktabc.co.in
+                     
                     </p>
                   </div>
                 </div>
@@ -197,10 +210,14 @@ export default function ContactHero() {
                     <Clock className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">Business Hours</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                      Business Hours
+                    </h3>
                     <p className="text-gray-700">
-                      Monday - Friday: 9:00 AM - 6:00 PM<br />
-                      Saturday: 9:00 AM - 2:00 PM<br />
+                      Monday - Friday: 9:00 AM - 6:00 PM
+                      <br />
+                      Saturday: 9:00 AM - 2:00 PM
+                      <br />
                       Sunday: Closed
                     </p>
                   </div>
@@ -214,7 +231,7 @@ export default function ContactHero() {
       {/* ✅ Separate Map Section */}
       <section className="bg-gray-100 py-0">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3444.5395048970727!2d77.90386357535554!3d30.307168574792332!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ed53e40000001%3A0x9ae13ba42c9cb792!2sUK%20Tunnel%20and%20Building%20Construction%20India%20Pvt.%20Ltd!5e0!3m2!1sen!2sin!4v1759139699055!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3444.539625391111!2d77.9064331054688!3d30.307165145874!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ed53e40000001%3A0x9ae13ba42c9cb792!2sUK%20Tunnel%20and%20Building%20Construction%20India%20Pvt.%20Ltd!5e0!3m2!1sen!2sin!4v1762506536614!5m2!1sen!2sin"
           width="100%"
           height="450"
           allowFullScreen=""

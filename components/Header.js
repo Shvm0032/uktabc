@@ -78,13 +78,13 @@ export default function Header() {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Link href="https://instagram.com" target="_blank">
+            <Link href="https://www.instagram.com/uktabc.co.in/" target="_blank">
               <Instagram className="h-5 w-5 hover:text-gray-200 transition" />
             </Link>
-            <Link href="https://facebook.com" target="_blank">
+            <Link href="https://www.facebook.com/uktabc.co.in" target="_blank">
               <Facebook className="h-5 w-5 hover:text-gray-200 transition" />
             </Link>
-            <Link href="https://youtube.com" target="_blank">
+            <Link href="https://www.youtube.com/channel/UC_QxTKD6jg82HXcCHlHPhqQ" target="_blank">
               <Youtube className="h-5 w-5 hover:text-gray-200 transition" />
             </Link>
           </div>
