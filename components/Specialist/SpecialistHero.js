@@ -18,7 +18,7 @@ export default function SpecialistHero() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-bold mb-4"
+            className="text-2xl md:text-6xl font-bold mb-4"
           >
             Our Specialization in Construction Works
           </motion.h1>
