@@ -1,9 +1,9 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Divider from "@/components/Divider";
-import { MapPin, Clock, Briefcase, CheckCircle, X  } from "lucide-react";
-
+import { MapPin, Clock, Briefcase, CheckCircle, X } from "lucide-react";
 import { useState } from "react";
+import emailjs from "emailjs-com";
 
 const jobOpenings = [
   {
@@ -106,6 +106,58 @@ const jobOpenings = [
 const JobOpeningSection = () => {
   const [selectedJob, setSelectedJob] = useState(null);
   const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    resume: "",
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // Handle change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Handle submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    emailjs
+      .send(
+        "service_xrc4a0d", 
+        "template_benz5y8", 
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          designation: selectedJob?.title || "Not specified", // ✅ Auto-filled designation
+        },
+        "s3y5QmP3jraYF71Mj" // ⚙️ Your Public Key
+      )
+      .then(
+        () => {
+          setIsLoading(false);
+          setIsSubmitted(true);
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+          });
+          setTimeout(() => setIsSubmitted(false), 5000);
+        },
+        (error) => {
+          console.error("Email Error:", error);
+          setIsLoading(false);
+          alert("❌ Something went wrong. Please try again later!");
+        }
+      );
+  };
+
   return (
     <>
       <section className="py-10 bg-[#F1F5F9]">
@@ -279,57 +331,123 @@ const JobOpeningSection = () => {
                       Apply for {selectedJob.title}
                     </h2>
 
-                    <form className="space-y-4">
-                      <div>
-                        <label className="block text-gray-700 mb-1">
-                          Full Name
-                        </label>
-                        <input
-                          type="text"
-                          className="w-full border rounded-lg px-3 py-2 focus:ring focus:ring-blue-200 outline-none"
-                          placeholder="Enter your name"
-                        />
-                      </div>
+                    <div className="relative max-w-lg mx-auto">
+                      {!isSubmitted ? (
+                        <form
+                          onSubmit={handleSubmit}
+                          className="space-y-4 bg-white p-6 rounded-xl shadow-md"
+                        >
+                          <div>
+                            <label className="block text-gray-700 mb-1">
+                              Full Name
+                            </label>
+                            <input
+                              type="text"
+                              name="name"
+                              value={formData.name}
+                              onChange={handleChange}
+                              required
+                              className="w-full border rounded-lg px-3 py-2 focus:ring focus:ring-blue-200 outline-none"
+                              placeholder="Enter your name"
+                            />
+                          </div>
 
-                      <div>
-                        <label className="block text-gray-700 mb-1">
-                          Email
-                        </label>
-                        <input
-                          type="email"
-                          className="w-full border rounded-lg px-3 py-2 focus:ring focus:ring-blue-200 outline-none"
-                          placeholder="Enter your email"
-                        />
-                      </div>
+                          <div>
+                            <label className="block text-gray-700 mb-1">
+                              Email
+                            </label>
+                            <input
+                              type="email"
+                              name="email"
+                              value={formData.email}
+                              onChange={handleChange}
+                              required
+                              className="w-full border rounded-lg px-3 py-2 focus:ring focus:ring-blue-200 outline-none"
+                              placeholder="Enter your email"
+                            />
+                          </div>
 
-                      <div>
-                        <label className="block text-gray-700 mb-1">
-                          Phone
-                        </label>
-                        <input
-                          type="tel"
-                          className="w-full border rounded-lg px-3 py-2 focus:ring focus:ring-blue-200 outline-none"
-                          placeholder="Enter your phone number"
-                        />
-                      </div>
+                          <div>
+                            <label className="block text-gray-700 mb-1">
+                              Phone
+                            </label>
+                            <input
+                              type="tel"
+                              name="phone"
+                              value={formData.phone}
+                              onChange={handleChange}
+                              required
+                              className="w-full border rounded-lg px-3 py-2 focus:ring focus:ring-blue-200 outline-none"
+                              placeholder="Enter your phone number"
+                            />
+                          </div>
 
-                      <div>
-                        <label className="block text-gray-700 mb-1">
-                          Resume
-                        </label>
-                        <input
-                          type="file"
-                          className="w-full border rounded-lg px-3 py-2 focus:ring focus:ring-blue-200 outline-none"
-                        />
-                      </div>
+                          {/* 🔹 Designation Field (auto-filled from URL) */}
+                          <div>
+                            <label className="block text-gray-700 mb-1">
+                              Designation
+                            </label>
+                            <input
+                              type="text"
+                              name="designation"
+                              value={formData.designation}
+                              onChange={handleChange}
+                              readOnly
+                              required
+                              className="w-full border rounded-lg px-3 py-2 bg-gray-100 text-gray-700 outline-none"
+                            />
+                          </div>
 
-                      <button
-                        type="submit"
-                        className="w-full bg-[#0A114D] text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all"
-                      >
-                        Submit Application
-                      </button>
-                    </form>
+                          <button
+                            type="submit"
+                            disabled={isLoading}
+                            className="w-full bg-[#0A114D] text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all flex justify-center items-center"
+                          >
+                            {isLoading ? (
+                              <svg
+                                className="animate-spin h-5 w-5 text-white"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                              >
+                                <circle
+                                  className="opacity-25"
+                                  cx="12"
+                                  cy="12"
+                                  r="10"
+                                  stroke="currentColor"
+                                  strokeWidth="4"
+                                ></circle>
+                                <path
+                                  className="opacity-75"
+                                  fill="currentColor"
+                                  d="M4 12a8 8 0 018-8v8z"
+                                ></path>
+                              </svg>
+                            ) : (
+                              "Submit Application"
+                            )}
+                          </button>
+                        </form>
+                      ) : (
+                        <AnimatePresence>
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="bg-[#0A114D] text-white text-center p-8 rounded-xl shadow-lg"
+                          >
+                            <h2 className="text-2xl font-bold mb-2">
+                              ✅ Application Submitted!
+                            </h2>
+                            <p className="text-blue-100">
+                              Thank you for applying. Our HR team will contact
+                              you soon.
+                            </p>
+                          </motion.div>
+                        </AnimatePresence>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               )}

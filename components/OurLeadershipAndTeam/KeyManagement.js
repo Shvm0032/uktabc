@@ -72,14 +72,14 @@ export default function KeyManagement() {
         <Divider />
 
         {/* Cards Grid */}
-        <div className="grid px-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
+        <div className="grid px-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-12">
           {team.map((member) => (
             <div
               key={member.id}
               className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 relative"
             >
               {/* Image */}
-              <div className="w-full h-[300px] md:h-[250px] relative">
+              <div className="w-full h-[300px] md:h-[300px] relative">
                 <Image
                   src={member.image}
                   alt={member.name}

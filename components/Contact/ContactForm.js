@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, Loader2 } from "lucide-react";
+import emailjs from "emailjs-com";
 
 export default function ContactHero() {
   const [formData, setFormData] = useState({
@@ -12,131 +13,194 @@ export default function ContactHero() {
     subject: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message! We will get back to you soon.");
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    setLoading(true);
+
+    const serviceID = "service_xrc4a0d";
+    const templateID = "template_qkzpn6i";
+    const publicKey = "s3y5QmP3jraYF71Mj";
+
+    emailjs.send(serviceID, templateID, formData, publicKey).then(
+      () => {
+        setLoading(false);
+        setIsSubmitted(true);
+        setShowPopup(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+
+        // Hide popup after 4 seconds
+        setTimeout(() => setShowPopup(false), 4000);
+      },
+      (error) => {
+        console.error("FAILED...", error);
+        setLoading(false);
+        setShowPopup(true);
+        setTimeout(() => setShowPopup(false), 4000);
+      }
+    );
   };
 
   return (
-    <div className="min-h-screen">
-      {/* Contact Information Section */}
+    <div className="min-h-screen relative">
+      {/* ✅ Popup Notification */}
+      {showPopup && (
+        <div className="fixed top-8 right-8 bg-brand-blue text-white px-6 py-3 rounded-lg shadow-lg font-medium z-50 transition-transform animate-bounce">
+          {isSubmitted
+            ? "✅ Your form has been submitted successfully!"
+            : "❌ Something went wrong. Please try again."}
+        </div>
+      )}
+
+      {/* Contact Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
+            {/* Left Side: Contact Form or Success Message */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="bg-white rounded-2xl shadow-xl p-8"
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                Send Us a Message
-              </h2>
+              {!isSubmitted ? (
+                <>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">
+                    Send Us a Message
+                  </h2>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
-                      placeholder="your@email.com"
-                    />
-                  </div>
-                </div>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Full Name *
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
+                          placeholder="Your full name"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
+                          placeholder="your@email.com"
+                        />
+                      </div>
+                    </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
-                      placeholder="+91 98765 43210"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Subject *
-                    </label>
-                    <select
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
+                          placeholder="+91 98765 43210"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">
+                          Subject *
+                        </label>
+                        <select
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
+                        >
+                          <option value="">Select a subject</option>
+                          <option value="Project Inquiry">
+                            Project Inquiry
+                          </option>
+                          <option value="Quote Request">Quote Request</option>
+                          <option value="Partnership">Partnership</option>
+                          <option value="General Question">
+                            General Question
+                          </option>
+                          <option value="Other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                        Message *
+                      </label>
+                      <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        rows={6}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
+                        placeholder="Tell us about your project requirements..."
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={loading}
+                      className="w-full bg-gradient-to-r from-brand-blue to-brand-maroon text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center"
                     >
-                      <option value="">Select a subject</option>
-                      <option value="Project Inquiry">Project Inquiry</option>
-                      <option value="Quote Request">Quote Request</option>
-                      <option value="Partnership">Partnership</option>
-                      <option value="General Question">General Question</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
+                      {loading ? (
+                        <>
+                          <Loader2 className="animate-spin mr-2 h-5 w-5" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="mr-2 h-5 w-5" />
+                          Send Message
+                        </>
+                      )}
+                    </button>
+                  </form>
+                </>
+              ) : (
+                <div className="text-center py-16">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                    🎉 Thank You!
+                  </h2>
+                  <p className="text-gray-700 text-lg">
+                    Your message has been sent successfully. Our team will get
+                    back to you soon.
+                  </p>
                 </div>
-
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-colors"
-                    placeholder="Tell us about your project requirements..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-brand-blue to-brand-maroon text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-lg transition-all duration-300 flex items-center justify-center"
-                >
-                  <Send className="mr-2 h-5 w-5" />
-                  Send Message
-                </button>
-              </form>
+              )}
             </motion.div>
 
-            {/* Contact Information */}
+            {/* Right Side: Contact Info */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -166,10 +230,9 @@ export default function ContactHero() {
                     <p className="text-gray-700">
                       Khasra No-1535, Ratanpur Nayagaon
                       <br />
-                      Simla Bye Paas Road Dehradun<br/>
-                      (Uttarakhand)India – 248007
+                      Simla Bye Paas Road Dehradun
                       <br />
-                      
+                      (Uttarakhand) India – 248007
                     </p>
                   </div>
                 </div>
@@ -183,7 +246,7 @@ export default function ContactHero() {
                       Phone Numbers
                     </h3>
                     <p className="text-gray-700">
-                      Office : 0135 2977177 
+                      Office : 0135 2977177
                       <br />
                       Mobile : +91 9917177777
                     </p>
@@ -198,10 +261,7 @@ export default function ContactHero() {
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">
                       Email Addresses
                     </h3>
-                    <p className="text-gray-700">
-                      General:  admin@uktabc.co.in
-                     
-                    </p>
+                    <p className="text-gray-700">General: admin@uktabc.co.in</p>
                   </div>
                 </div>
 
@@ -228,7 +288,7 @@ export default function ContactHero() {
         </div>
       </section>
 
-      {/* ✅ Separate Map Section */}
+      {/* Google Map */}
       <section className="bg-gray-100 py-0">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3444.539625391111!2d77.9064331054688!3d30.307165145874!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ed53e40000001%3A0x9ae13ba42c9cb792!2sUK%20Tunnel%20and%20Building%20Construction%20India%20Pvt.%20Ltd!5e0!3m2!1sen!2sin!4v1762506536614!5m2!1sen!2sin"
