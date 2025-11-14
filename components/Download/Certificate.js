@@ -10,17 +10,14 @@ export default function Certificate() {
 
   const images = [
     {
-      src: "/Assets/exp-certi/exp-certificate-uktabc.jpg",
-      caption: "Certificate of Appreciation – UKTABC",
+      src: "/Assets/exp-certi/uktunnel-experience certificate.jpg",
+      caption: "Experience Certificate",
     },
     {
-      src: "/Assets/exp-certi/ritwik-work-exp-certi.jpg",
-      caption: "Letter of Appreciation – Ritwik",
+      src: "/Assets/exp-certi/uktunnel-experience-certificate-1.jpg",
+      caption: "Experience Certificate 1",
     },
-    {
-      src: "/Assets/exp-certi/Uktabc-exp-letter.jpg",
-      caption: "Experience Letter – UKTABC",
-    },
+    
   ];
 
   const handleClose = () => {
